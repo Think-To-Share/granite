@@ -18,10 +18,11 @@ export default {
     
 <style lang="scss" scoped>
     .measurements-card{
-        box-shadow: 0px 1px 5px 1px rgb(209 207 207 / 85%);
-        border-radius: 0%;
-        border: none;
-        margin: 10;
+        box-shadow : 0px 1px 5px 1px rgb(209 207 207 / 85%);
+        border-bottom : 
+        border-radius : 0%;
+        border : none;
+        margin : 10;
         .granite-card-header{
             font-family: var(--primary-font);
             color:#3C7C8E;
@@ -38,6 +39,7 @@ export default {
         }
 
         .round-container{
+
             .granite-round-btn-filled{
                 background-color: #3C7C8E;
                 border : 6px solid #244a55;
