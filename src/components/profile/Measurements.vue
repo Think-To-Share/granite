@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
     .measurements-card{
         box-shadow : 0px 1px 5px 1px rgb(209 207 207 / 85%);
-        border-bottom : 
+        border-bottom : 3px solid rgb(209 207 207 / 85%);
         border-radius : 0%;
         border : none;
         margin : 10;
