@@ -3,8 +3,8 @@
       <div class="card-body">
         <h4 class="card-title granite-card-header mb-5">Do you know your Project Sizes?</h4>
         <div class="round-container">
-            <button class="granite-round-btn">YES</button>
-            <button class="granite-round-btn">NO</button>
+            <button class="granite-round-btn-filled">YES</button>
+            <button class="granite-round-btn-empty">NO</button>
         </div>
       </div>
     </div>
@@ -38,12 +38,32 @@ export default {
         }
 
         .round-container{
-            .granite-round-btn{
+            .granite-round-btn-filled{
                 background-color: #3C7C8E;
-                border : 3px solid #244a55;
+                border : 6px solid #244a55;
                 color : #fff;
                 font-family:var(--primary-font);
                 padding : 2%;
+                margin : 2%;
+                border-radius : 60%;
+                transition: all 0.5s ease 0s;
+                
+            }
+            .granite-round-btn-empty{
+                background-color: #fff;
+                border : 6px solid #ddd;
+                color : #888;
+                font-family:var(--primary-font);
+                padding : 2%;
+                margin : 2%;
+                border-radius : 60%;
+                transition: all 0.5s ease 0s;
+                
+                &:hover{
+                    background-color: #3C7C8E;
+                    border : 6px solid #244a55;
+                    color : #fff;
+                }
             }
         }
 
