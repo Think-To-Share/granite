@@ -15,7 +15,7 @@
                         <select class="custom-select" name="caste_category" required>
                             <option disabled  value="" selected>Select your Address</option>
                             <option value="unreserved">4Fashions Ltd, Unit 3, Manchester Trade Park, Holt Street, Manchester</option>
-                            <option value="sc">Littens & Co Ltd, Unit 7, Holt Street, Manchester</option>
+                            <option value="sc">Littens &amp; Co Ltd, Unit 7, Holt Street, Manchester</option>
                             <option value="st">Premier Stone, Unit 3, Holt Street, Manchester</option>
                         </select>
                     </div>
@@ -118,8 +118,10 @@
 
     <section class="profile-part">
         <selected-range />
+        <project-type />
         <measurements />
         <sink-info />
+        <options />
     </section>
 
     <div class="contact-card quote-progress">
@@ -169,12 +171,16 @@
 import Measurements from '@/components/profile/Measurements.vue'
 import SinkInfo from '@/components/profile/SinkInfo.vue'
 import SelectedRange from '@/components/profile/SelectedRange.vue'
+import ProjectType from '@/components/profile/ProjectType.vue'
+import Options from '@/components/profile/Options.vue'
 
 export default {
     components: {
         'measurements': Measurements,
         'sink-info': SinkInfo,
         'selected-range': SelectedRange,
+        'project-type': ProjectType,
+        'options': Options,
     }
 }
 </script>
