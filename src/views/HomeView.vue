@@ -1,7 +1,3 @@
-// <script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
-// </script>
-
 <template>
   <main>
   <section class="installation">
@@ -120,6 +116,11 @@
         </div>
     </section>
 
+    <section class="profile-part">
+        <project-size />
+        <sink-info />
+    </section>
+
     <div class="contact-card quote-progress">
         <form>
             <div class="row gy-2 gx-2">
@@ -151,12 +152,27 @@
                             Zone correspondence, quotes and offers via email.*</span></label>
                         </div>
                     </div>
-                    <div class="form-group mt-3">
-                        <button type="submit" class="btn estimate-btn">Get my estimate</button>
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn w-100 estimate-btn">Get my estimate</button>
                     </div>
                 </div>
             </div> 
         </form>
     </div>
+
+
   </main>
 </template>
+
+<script>
+import ProjectSize from '@/components/profile/ProjectSize.vue'
+import SinkInfo from '@/components/profile/SinkInfo.vue'
+
+export default {
+    components: {
+        'project-size': ProjectSize,
+        'sink-info': SinkInfo,
+    }
+}
+</script>
+
