@@ -6,8 +6,7 @@
             <div class="imgBox border bg-white">
                 <img src="@/assets/images/IceWhite.jpg" class="img-fluid">
             </div>
-        </div>
-        
+        </div>   
     </div>
 </template>
 
@@ -18,12 +17,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "rfs/scss";
 .selectedrange{
     box-shadow: 0px 1px 5px 1px #d1cfcfd9;
     padding: 45px 35px;
     margin-bottom: 25px;
     .selectedrange-heading{
-       color: #3c7c8e
+       color: #3c7c8e;
+       font-family: var(--primary-font);
     }
     .price-btn{
         background-color:#3c7c8e;
@@ -39,6 +40,4 @@ export default {
         }
     }
 }
-
-
 </style>

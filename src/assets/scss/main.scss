@@ -300,21 +300,21 @@ a,
               
           }
       }
-      .next-btn-main{
-          display: flex;
-          justify-content: flex-end;
-          .next-btn{
-              font-family: var(--primary-font);
-              font-weight: 400;
-              color: #fff;
-              padding: 15px 50px;
-              margin-top: 20px;
-              font-size: 1em;
-              background-color: #3C7C8E;
-              border: none;
-              white-space: nowrap;
-          }
-      }
+        .next-btn-main{
+            display: flex;
+            justify-content: flex-end;
+            .next-btn{
+                font-family: var(--primary-font);
+                font-weight: 400;
+                color: #fff;
+                padding: 15px 50px;
+                margin-top: 20px;
+                font-size: 1em;
+                background-color: #3C7C8E;
+                border: none;
+                white-space: nowrap;
+            }
+        }
       
   }
 }
