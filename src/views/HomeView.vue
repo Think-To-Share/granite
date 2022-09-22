@@ -118,7 +118,7 @@
 
     <section class="profile-part">
         <selected-range />
-        <project-size />
+        <measurements />
         <sink-info />
     </section>
 
@@ -166,13 +166,13 @@
 </template>
 
 <script>
-import ProjectSize from '@/components/profile/ProjectSize.vue'
+import Measurements from '@/components/profile/Measurements.vue'
 import SinkInfo from '@/components/profile/SinkInfo.vue'
 import SelectedRange from '@/components/profile/SelectedRange.vue'
 
 export default {
     components: {
-        'project-size': ProjectSize,
+        'measurements': Measurements,
         'sink-info': SinkInfo,
         'selected-range': SelectedRange,
     }
