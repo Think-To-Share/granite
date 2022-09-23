@@ -7,6 +7,62 @@
             <button class="granite-round-btn-empty">NO</button>
         </div>
       </div>
+
+      <div class="card-body layout-card">
+        <h4 class="card-title granite-card-header mb-5">What Layout is your kitchen?</h4>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
+                                </div>
+                                <span class="a bottom activeBlock">A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+
       <div class="card-body button-card">
         <h4 class="card-title granite-card-header mb-5">Do you have a Project Plan?</h4>
         <div class="round-container">
@@ -46,6 +102,26 @@ export default {
 
             &:hover{
                 background-color : rgba(246, 246, 246, 0.85);
+            }
+        }
+
+        .layout-card{
+            .row-box-A{
+                height: 130px;
+                text-align: center;
+                .col-box{
+                    display: flex;
+                    height: 90px;
+                    justify-content: space-between;
+                    flex-wrap: nowrap;
+                }
+            }
+            .select-layout{
+                    background-color : #fff;
+                &:hover{
+                    background-color : #3C7C8E;
+                }
+                
             }
         }
         .granite-card-header{
