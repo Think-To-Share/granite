@@ -3,7 +3,11 @@
         <div class="card">
             <div class="options-main card-inner">
                 <h5 class="options-heading">Do you require <strong>Upstands</strong> (in metres)?</h5>
-                <div class="row align-items-center">
+                <div class="round-container">
+                    <button class="granite-round-btn" :class="{filled: upstands_required}" @click="upstands_required=true">YES</button>
+                    <button class="granite-round-btn" :class="{filled: upstands_required === false}" @click="upstands_required=false">NO</button>
+                </div>
+                <div class="row align-items-center" v-if="upstands_required">
                     <div class="col-6">
                         <input type="range" class="form-range" min="0" max="20" step="1" v-model="range">
                     </div>
@@ -18,9 +22,13 @@
 
             <div class="worktop card-inner">
                 <h5 class="options-heading">Do you require any other <strong>Worktop Options</strong> not mentioned here?</h5>
-                <div class="row align-items-center">
+                <div class="round-container">
+                    <button class="granite-round-btn" :class="{filled: worktop_required}" @click="worktop_required=true">YES</button>
+                    <button class="granite-round-btn" :class="{filled: worktop_required === false}" @click="worktop_required=false">NO</button>
+                </div>
+                <div class="row align-items-center" v-if="worktop_required">
                     <div class="col-8">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" rows="4" placeholder="Describe Here....."></textarea>
                     </div>
                 </div>  
             </div>    
@@ -35,7 +43,10 @@
 export default {
     data(){
         return {
-            range: 0
+            range: 0,
+            upstands_required: true,
+            worktop_required: null,
+
         }
     }
 }
@@ -56,7 +67,45 @@ export default {
             color: #3c7c8e;
             font-family: var(--primary-font);
             @include font-size(1.3rem);
-       }
+        }
+        .round-container{
+
+            .granite-round-btn{
+                font-family:var(--primary-font);
+                padding : 2%;
+                border-radius : 60%;
+                transition: all 0.5s ease 0s;  
+                background-color: #fff;
+                border : 6px solid #ddd;
+                color : #888;
+                
+
+                &.filled{
+                    background-color: #3C7C8E;
+                    border : 6px solid #244a55;
+                    color : #fff;
+                
+                    
+                }
+
+                &:last-child{
+                    margin : 2%; 
+                }
+
+                &:hover{
+                    background-color: #3C7C8E;
+                    border : 6px solid #244a55;
+                    color : #fff;
+                }
+            }
+
+        
+        }
+        textarea{
+            &::placeholder{
+                color: #a39e9ed9;
+            }
+        }
     }
 }
 .next-btn-main{
@@ -73,6 +122,10 @@ export default {
         white-space: nowrap;
         margin-bottom: 30px;
         border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          background-color: #19414d;  
+        }
     }
 }
 </style>
