@@ -12,7 +12,7 @@
             <h4 class="card-title granite-card-header mb-5">What Layout is your kitchen?</h4>
                 <div class="row justify-content-center align-items-center g-2">
                     <div class="col-md-4">
-                        <div class="card text-start select-layout">
+                        <div class="card text-start select-layout active">
                             <div class="card-body">
                                 <div class="row-box-A">
                                     <div class="col-box">
@@ -20,6 +20,67 @@
                                         <span class="mdl c disabled">C</span>
                                         <span class="right d disabled">D</span>
                                     </div>
+                                    <br>
+                                    <span class="a bottom activeBlock">A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-start select-layout active">
+                            <div class="card-body">
+                                <div class="row-box-A">
+                                    <div class="col-box">
+                                        <span class="left b activeBlock">B</span>
+                                        <span class="mdl c disabled">C</span>
+                                        <span class="right d disabled">D</span>
+                                    </div>
+                                    <br>
+                                    <span class="a bottom activeBlock">A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-start select-layout active">
+                            <div class="card-body">
+                                <div class="row-box-A">
+                                    <div class="col-box">
+                                        <span class="left b activeBlock">B</span>
+                                        <span class="mdl c disabled">C</span>
+                                        <span class="right d disabled">D</span>
+                                    </div>
+                                    <br>
+                                    <span class="a bottom activeBlock">A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-start select-layout active">
+                            <div class="card-body">
+                                <div class="row-box-A">
+                                    <div class="col-box">
+                                        <span class="left b activeBlock">B</span>
+                                        <span class="mdl c disabled">C</span>
+                                        <span class="right d disabled">D</span>
+                                    </div>
+                                    <br>
+                                    <span class="a bottom activeBlock">A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-start select-layout active">
+                            <div class="card-body">
+                                <div class="row-box-A">
+                                    <div class="col-box">
+                                        <span class="left b activeBlock">B</span>
+                                        <span class="mdl c disabled">C</span>
+                                        <span class="right d disabled">D</span>
+                                    </div>
+                                    <br>
                                     <span class="a bottom activeBlock">A</span>
                                 </div>
                             </div>
@@ -28,35 +89,9 @@
                     <div class="col-md-4">
                         <div class="card text-start select-layout">
                             <div class="card-body">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout">
-                            <div class="card-body">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout">
-                            <div class="card-body">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout">
-                            <div class="card-body">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout">
-                            <div class="card-body">
-                                
+                                <p class="custom-size">
+                                    Custom Sizes
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -161,7 +196,49 @@ export default {
                 &:hover{
                     background-color : #3C7C8E;
                 }
+
+                .row-box-A{
+                    height: 130px;
+                    text-align: center;
+
+                    span {
+                        background-color: #fff;
+                        color: #3C7C8E;
+                        font-size: 13px;
+                        margin: 3px;
+                        padding: 8px 12px;
+                        font-family: var(--primary-font);
+                    }
+                    .bottom{
+                        background-color: #fff;
+                        color: #3C7C8E;
+                        font-size: 13px;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        padding: 8px 12px;
+                        font-family: var(--primary-font);
+                        padding: 2% 48%;
+                    }
+                    
+                }
                 
+                .custom-size{
+                    color:#3C7C8E;
+                    font-family: var(--primary-font);
+                    text-align: center;
+                    padding: 12% 12%;
+                    transition: all 0.5s ease 0s;
+                    font-size: 18px;
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+            }
+
+            .active{
+                    background-color: #3C7C8E !important;
+                    border-color: #3C7C8E;
+                    color: #fff;
             }
         }
         .granite-card-header{
