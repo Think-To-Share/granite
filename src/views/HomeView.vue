@@ -1,35 +1,5 @@
 <template>
   <main>
-  <section class="installation">
-        <div class="installation-main">
-            <!-- <h4 class="quote-heading">Postcode</h4> -->
-            <div class="installation-form">
-                <div class="tooltip-area">
-                    <h4 class="address-title">
-                        Where will the <strong class="fw-bold">Installation</strong> take place? *
-                    </h4>
-                    <div class="form-container">
-                        <label for="">Enter your postcode</label><br>
-                        <input type="text"  class="postcode_input"  placeholder="Enter Your Postcode" required><br>
-                        <button class="postcode_button" type="button">Find your Address</button><br>
-                        <select class="custom-select" name="caste_category" required>
-                            <option disabled  value="" selected>Select your Address</option>
-                            <option value="unreserved">4Fashions Ltd, Unit 3, Manchester Trade Park, Holt Street, Manchester</option>
-                            <option value="sc">Littens &amp; Co Ltd, Unit 7, Holt Street, Manchester</option>
-                            <option value="st">Premier Stone, Unit 3, Holt Street, Manchester</option>
-                        </select>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="next-btn-main">
-                <button type="button" class="next-btn">NEXT</button>
-            </div>
-            
-        </div>
-        
-    </section>
-
     <section class="quartz-granite-part">
         <div class="quartz-heading-main">
             <h2 class="quartz-heading">Quartz</h2>
@@ -115,6 +85,35 @@
             </div>
         </div>
     </section>
+
+    <section class="installation">
+        <div class="installation-main">
+            <!-- <h4 class="quote-heading">Postcode</h4> -->
+            <div class="installation-form">
+                <div class="tooltip-area">
+                    <h4 class="address-title">
+                        Where will the <strong class="fw-bold">Installation</strong> take place? *
+                    </h4>
+                    <div class="form-container">
+                        <label for="">Address Line 1</label><br>
+                        <input type="text"  class="postcode_input"  placeholder="Enter Your Address Line 1" required><br>
+                        <label for="">Address Line 2</label><br>
+                        <input type="text"  class="postcode_input"  placeholder="Enter Your Address Line 2" required><br>
+                        <label for="">Enter your postcode</label><br>
+                        <input type="text"  class="postcode_input"  placeholder="Enter Your Postcode" required>  
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="next-btn-main">
+                <button type="button" class="next-btn">NEXT</button>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    
 
     <section class="profile-part">
         <selected-range />
