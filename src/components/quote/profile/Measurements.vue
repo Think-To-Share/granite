@@ -3,109 +3,109 @@
         <div class="card-body button-card">
             <h4 class="card-title granite-card-header mb-5">Do you know your Project Sizes?</h4>
             <div class="round-container">
-                <button class="granite-round-btn-filled">YES</button>
-                <button class="granite-round-btn-empty">NO</button>
+                <button class="granite-round-btn" :class="{filled: project_size}" @click="projectSize()" >YES</button>
+                <button class="granite-round-btn" :class="{filled: project_size === false}" @click="project_size=false">NO</button>
             </div>
         </div>
 
-        <div class="card-body layout-card">
+        <div class="card-body layout-card" v-if="project_size">
             <h4 class="card-title granite-card-header mb-5">What Layout is your kitchen?</h4>
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout active">
-                            <div class="card-body">
-                                <div class="row-box-A">
-                                    <div class="col-box">
-                                        <span class="left b activeBlock">B</span>
-                                        <span class="mdl c disabled">C</span>
-                                        <span class="right d disabled">D</span>
-                                    </div>
-                                    <br>
-                                    <span class="a bottom activeBlock">A</span>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-md-4" @click="dimensions=[{length:'',width:''}]">
+                    <div class="card text-start select-layout active">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout active">
-                            <div class="card-body">
-                                <div class="row-box-A">
-                                    <div class="col-box">
-                                        <span class="left b activeBlock">B</span>
-                                        <span class="mdl c disabled">C</span>
-                                        <span class="right d disabled">D</span>
-                                    </div>
-                                    <br>
-                                    <span class="a bottom activeBlock">A</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout active">
-                            <div class="card-body">
-                                <div class="row-box-A">
-                                    <div class="col-box">
-                                        <span class="left b activeBlock">B</span>
-                                        <span class="mdl c disabled">C</span>
-                                        <span class="right d disabled">D</span>
-                                    </div>
-                                    <br>
-                                    <span class="a bottom activeBlock">A</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout active">
-                            <div class="card-body">
-                                <div class="row-box-A">
-                                    <div class="col-box">
-                                        <span class="left b activeBlock">B</span>
-                                        <span class="mdl c disabled">C</span>
-                                        <span class="right d disabled">D</span>
-                                    </div>
-                                    <br>
-                                    <span class="a bottom activeBlock">A</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout active">
-                            <div class="card-body">
-                                <div class="row-box-A">
-                                    <div class="col-box">
-                                        <span class="left b activeBlock">B</span>
-                                        <span class="mdl c disabled">C</span>
-                                        <span class="right d disabled">D</span>
-                                    </div>
-                                    <br>
-                                    <span class="a bottom activeBlock">A</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-start select-layout">
-                            <div class="card-body">
-                                <p class="custom-size">
-                                    Custom Sizes
-                                </p>
+                                <br>
+                                <span class="a bottom activeBlock">A</span>
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
-
-        <div class="card-body button-card">
-            <h4 class="card-title granite-card-header mb-5">Do you have a Project Plan?</h4>
-            <div class="round-container">
-                <button class="granite-round-btn-filled">YES</button>
-                <button class="granite-round-btn-empty">NO</button>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout active">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
+                                </div>
+                                <br>
+                                <span class="a bottom activeBlock">A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout active">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
+                                </div>
+                                <br>
+                                <span class="a bottom activeBlock">A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout active">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
+                                </div>
+                                <br>
+                                <span class="a bottom activeBlock">A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout active">
+                        <div class="card-body">
+                            <div class="row-box-A">
+                                <div class="col-box">
+                                    <span class="left b activeBlock">B</span>
+                                    <span class="mdl c disabled">C</span>
+                                    <span class="right d disabled">D</span>
+                                </div>
+                                <br>
+                                <span class="a bottom activeBlock">A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-start select-layout">
+                        <div class="card-body">
+                            <p class="custom-size">
+                                Custom Sizes
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card-body button-card">
+
+        <div class="card-body button-card" v-if="!project_size">
+            <h4 class="card-title granite-card-header mb-5">Do you have a Project Plan?</h4>
+            <div class="round-container">
+                <button class="granite-round-btn" :class="{filled: project_plan}" @click="project_plan=true">YES</button>
+                <button class="granite-round-btn" :class="{filled: project_plan === false}" @click="project_plan=false">NO</button>
+            </div>
+        </div>
+        <div class="card-body button-card" v-if="project_plan !== null">
             <h4 class="card-title granite-card-header mb-5">How would you describe the Size of your Project?</h4>
             <div class="round-container">
                 <button class="granite-square-btn-empty">S</button>
@@ -131,34 +131,33 @@
                     <p class="length-width-part">WIDTH</p>
                 </div>
             </div>
-            <div class="row form-group mmcalculator">
-                <div class="col-lg-1 piece-box">
-                    <label class="mesaure-box__label" for="">Piece<br>
-                        <span>A</span> 
-                    </label>
-                </div>
-                <div class="col-lg-5 mesaure-box__input">
-                    <div class="input-box"> 
-                        <input placeholder="2500mm" type="text" name="length" class="form-control numberonly" value=""> 
-                    </div>
-                </div>
-               <div class="col-lg-1 piece-box">
-                    <span>x</span>
-                </div>
-                <div class="col-lg-5 mesaure-box__input">
-                    <div class="input-box"> 
-                        <input placeholder="600mm" type="text" name="length" class="form-control numberonly" value=""> 
-                    </div>
-                </div>
-            </div>
+
+            <dimensions v-for="(dimension, index) in dimensions" :key="index" />
             <p class="polishededgestxt mb-0 mt-5">The estimated worktop profile is <u><strong>0 mm</strong></u> based on measurement entered above</p>
         </div>
     </div>
 </template>
 
 <script>
+import Dimensions from "@/components/quote/profile/Dimensions.vue";
 export default {
-    
+    data(){
+        return {
+            project_size: true,
+            project_plan: null,
+            dimensions:[{length:'',width:''}], 
+
+        }
+    },
+    methods: {
+        projectSize() {
+            this.project_size = true
+            this.project_plan = null
+        }
+    },
+    components: {
+        "dimensions": Dimensions,
+    }, 
 }
 </script>
     
@@ -258,17 +257,46 @@ export default {
 
         .round-container{
 
-            .granite-round-btn-filled{
-                background-color: #3C7C8E;
-                border : 6px solid #244a55;
-                color : #fff;
+             .granite-round-btn{
                 font-family:var(--primary-font);
                 padding : 2%;
-                margin : 2%;
                 border-radius : 60%;
-                transition: all 0.5s ease 0s;
+                transition: all 0.5s ease 0s;  
+                background-color: #fff;
+                border : 6px solid #ddd;
+                color : #888;
                 
+
+                &.filled{
+                    background-color: #3C7C8E;
+                    border : 6px solid #244a55;
+                    color : #fff;
+                
+                    
+                }
+
+                &:last-child{
+                    margin : 2%; 
+                }
+
+                &:hover{
+                    background-color: #3C7C8E;
+                    border : 6px solid #244a55;
+                    color : #fff;
+                }
             }
+
+            // .granite-round-btn-filled{
+            //     background-color: #3C7C8E;
+            //     border : 6px solid #244a55;
+            //     color : #fff;
+            //     font-family:var(--primary-font);
+            //     padding : 2%;
+            //     margin : 2%;
+            //     border-radius : 60%;
+            //     transition: all 0.5s ease 0s;
+                
+            // }
             .granite-round-btn-empty{
                 background-color: #fff;
                 border : 6px solid #ddd;
@@ -344,6 +372,4 @@ export default {
             @include font-size(1.2rem);
         }
     }
-
-
 </style>

@@ -104,8 +104,6 @@ export default {
                     color : #fff;
                 }
             }
-
-        
         }
         textarea{
             &::placeholder{
