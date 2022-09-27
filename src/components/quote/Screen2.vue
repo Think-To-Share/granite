@@ -10,9 +10,11 @@
                             place? *
                         </h4>
                         <div class="form-container">
-                            <label for="">Address Line 1</label><br />
+                            <form ref="form">
+                                <label for="">Address Line 1</label><br />
                             <input
                                 type="text"
+                                name="address_1"
                                 class="postcode_input"
                                 placeholder="Enter Your Address Line 1"
                                 required
@@ -20,6 +22,7 @@
                             <label for="">Address Line 2</label><br />
                             <input
                                 type="text"
+                                name="address_2"
                                 class="postcode_input"
                                 placeholder="Enter Your Address Line 2"
                                 required
@@ -27,14 +30,16 @@
                             <label for="">Enter Your Postcode</label><br />
                             <input
                                 type="text"
+                                name="post_code"
                                 class="postcode_input"
                                 placeholder="Enter Your Postcode"
                                 required
                             />
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="next-btn-main" @click.prevent="changeScreen(3)">
+                <div class="next-btn-main" @click.prevent="submit($refs.form)">
                     <button type="button" class="next-btn">NEXT</button>
                 </div>
             </div>
@@ -43,11 +48,25 @@
 
 <script>
 import { useQuoteStore } from '@/stores/quote'
-import { mapActions } from "pinia"
+import { mapActions, mapState } from "pinia"
 
 export default {
+    computed: {
+        ...mapState(useQuoteStore, ['quote_id'])
+    },
     methods:{
-        ...mapActions(useQuoteStore, ['changeScreen'])
+        ...mapActions(useQuoteStore, ['changeScreen']),
+
+        submit(form) {
+            const formRequest = new FormData(form)
+            
+            this.axios.post(`/request-quote-address/${this.quote_id}`, formRequest).then(res => {
+                // Handle
+            })
+
+            this.changeScreen(3)
+        }
+
     }
 }
 </script>

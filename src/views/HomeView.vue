@@ -1,10 +1,6 @@
 <template>
     <main>
-        <screen-1 v-if="currentScreen === 1" />
-        <screen-2 v-if="currentScreen === 2" />
-        <screen-3 v-if="currentScreen === 3" />
-        <screen-4  v-if="currentScreen === 4" />
-
+        <component :is="`screen${currentScreen}`" />
     </main>
 </template>
 

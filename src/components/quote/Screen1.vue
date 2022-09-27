@@ -5,7 +5,7 @@
         </div>
 
         <div class="quartz-img-main">
-            <div class="quartz-main" @click.prevent="changeScreen(2)">
+            <div class="quartz-main" @click.prevent="selectProduct(1)">
                 <div class="quartz-img-container">
                     <img
                         class="quartz-img"
@@ -19,7 +19,7 @@
             <h2 class="granite-heading">Granite</h2>
         </div>
         <div class="granite-img-main">
-            <div class="granite-main" @click.prevent="changeScreen(2)">
+            <div class="granite-main" @click.prevent="selectProduct(1)">
                 <div class="granite-img-container">
                     <img
                         class="granite-img"
@@ -38,7 +38,17 @@ import { mapActions } from "pinia"
 
 export default {
     methods:{
-        ...mapActions(useQuoteStore, ['changeScreen'])
+        ...mapActions(useQuoteStore, ['changeScreen']),
+
+        selectProduct(product_id) {
+            this.axios.post('/request-quote-product', {
+                'product_id': product_id
+            }).then(res => {
+                // Set Quote Id to State 
+            })
+
+            this.changeScreen(2)
+        }
     }
 }
 </script>
