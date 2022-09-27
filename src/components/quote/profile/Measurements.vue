@@ -88,8 +88,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card text-start select-layout">
-                            <div class="card-body">
-                                <p class="custom-size">
+                            <div class="card-body custom-size">
+                                <p class="">
                                     Custom Sizes
                                 </p>
                             </div>
@@ -186,7 +186,7 @@ export default {
                 text-align: center;
                 .col-box{
                     display: flex;
-                    height: 90px;
+                    height: 90px;   
                     justify-content: space-between;
                     flex-wrap: nowrap;
                 }
@@ -195,6 +195,7 @@ export default {
                     background-color : #fff;
                 &:hover{
                     background-color : #3C7C8E;
+                    color : #fff;
                 }
 
                 .row-box-A{
@@ -220,13 +221,17 @@ export default {
                         padding: 2% 48%;
                     }
                     
+                    .disabled{
+                        display : none;
+                    }
+                    
                 }
                 
                 .custom-size{
                     color:#3C7C8E;
                     font-family: var(--primary-font);
                     text-align: center;
-                    padding: 12% 12%;
+                    padding: 15% 12%;
                     transition: all 0.5s ease 0s;
                     font-size: 18px;
                     &:hover{
@@ -240,6 +245,7 @@ export default {
                     border-color: #3C7C8E;
                     color: #fff;
             }
+
         }
         .granite-card-header{
             font-family: var(--primary-font);
