@@ -12,7 +12,7 @@
             <h4 class="card-title granite-card-header mb-5">What Layout is your kitchen?</h4>
                 <div class="row justify-content-center align-items-center g-2">
                     <div class="col-md-4">
-                        <div class="card text-start select-layout active">
+                        <div class="card text-start select-layout">
                             <div class="card-body">
                                 <div class="row-box-A">
                                     <div class="col-box">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-start select-layout active">
+                        <div class="card text-start select-layout">
                             <div class="card-body">
                                 <div class="row-box-A">
                                     <div class="col-box">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-start select-layout active">
+                        <div class="card text-start select-layout">
                             <div class="card-body">
                                 <div class="row-box-A">
                                     <div class="col-box">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-start select-layout active">
+                        <div class="card text-start select-layout">
                             <div class="card-body">
                                 <div class="row-box-A">
                                     <div class="col-box">
@@ -193,9 +193,17 @@ export default {
             }
             .select-layout{
                     background-color : #fff;
+                    transition: all 0.5s ease 0s;
+
                 &:hover{
                     background-color : #3C7C8E;
                     color : #fff;
+
+                    span{
+                        background-color : #fff !important;
+                        color : #3C7C8E !important;
+                    }
+
                 }
 
                 .row-box-A{
@@ -203,16 +211,17 @@ export default {
                     text-align: center;
 
                     span {
-                        background-color: #fff;
-                        color: #3C7C8E;
+                        color: #fff;
+                        background-color: rgba(0,0,0,.35);
                         font-size: 13px;
                         margin: 3px;
                         padding: 8px 12px;
                         font-family: var(--primary-font);
+                        
                     }
                     .bottom{
-                        background-color: #fff;
-                        color: #3C7C8E;
+                        color: #fff;
+                        background-color: rgba(0,0,0,.35);
                         font-size: 13px;
                         margin-top: 5%;
                         margin-bottom: 5%;
@@ -244,6 +253,11 @@ export default {
                     background-color: #3C7C8E !important;
                     border-color: #3C7C8E;
                     color: #fff;
+
+                    span{
+                        background-color : #fff !important;
+                        color : #3C7C8E !important;
+                    }
             }
 
         }
