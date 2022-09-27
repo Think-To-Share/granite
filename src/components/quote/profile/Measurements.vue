@@ -28,7 +28,7 @@
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 'l'">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="dimensions=[{ length,width},{length,width},{length,width},{length,width}]; selected_layout = 'u_i'">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'u'">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'l_i'">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout active">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 's_i'">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'custom'}" @click="dimensions=[{ length,width}]; selected_layout = 'custom'">
                         <div class="card-body custom-size">
                             <p class="">Custom Sizes</p>
                         </div>
@@ -177,6 +177,7 @@ export default {
             project_size: true,
             project_plan: null,
             dimensions: [{ length: "", width: "" }],
+            selected_layout: null,
         };
     },
     methods: {
