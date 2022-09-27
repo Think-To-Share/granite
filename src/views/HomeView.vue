@@ -99,10 +99,9 @@
                         <input type="text"  class="postcode_input"  placeholder="Enter Your Address Line 1" required><br>
                         <label for="">Address Line 2</label><br>
                         <input type="text"  class="postcode_input"  placeholder="Enter Your Address Line 2" required><br>
-                        <label for="">Enter your postcode</label><br>
+                        <label for="">Enter Your Postcode</label><br>
                         <input type="text"  class="postcode_input"  placeholder="Enter Your Postcode" required>  
                     </div>
-                    
                 </div>
             </div>
             <div class="next-btn-main">
