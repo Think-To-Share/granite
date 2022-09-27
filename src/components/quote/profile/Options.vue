@@ -33,13 +33,16 @@
                 </div>  
             </div>    
         </div>
-        <div class="next-btn-main">
+        <div class="next-btn-main" @click.prevent="changeScreen(4)">
             <button type="button" class="next-btn">NEXT</button>
         </div>
     </div>
 </template>
 
 <script>
+import { useQuoteStore } from '@/stores/quote'
+import { mapActions } from "pinia"
+
 export default {
     data(){
         return {
@@ -48,6 +51,9 @@ export default {
             worktop_required: null,
 
         }
+    },
+    methods:{
+        ...mapActions(useQuoteStore, ['changeScreen'])
     }
 }
 </script>
