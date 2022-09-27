@@ -64,7 +64,7 @@
                                 <div class="col-box">
                                     <span class="left b activeBlock">B</span>
                                     <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
+                                    <span class="right d ">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -77,9 +77,9 @@
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
-                                    <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
+                                    <span class="left b ">B</span>
+                                    <span class="mdl c ">C</span>
+                                    <span class="right d">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -92,9 +92,9 @@
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
-                                    <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
+                                    <span class="left b " style="background:transparent;">B</span>
+                                    <span class="mdl c">C</span>
+                                    <span class="right d ">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -237,7 +237,10 @@ export default {
             .row-box-A {
                 height: 130px;
                 text-align: center;
-
+                
+                .mdl{ 
+                    align-self: center;
+                }
                 span {
                     color: #fff;
                     background-color: rgba(0, 0, 0, 0.35);
@@ -283,6 +286,9 @@ export default {
             span {
                 background-color: #fff !important;
                 color: #3c7c8e !important;
+            }
+            p{ 
+                color : #fff;
             }
         }
     }
