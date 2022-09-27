@@ -1,6 +1,8 @@
 <template>
-    <main>
-        <component :is="`screen${currentScreen}`" />
+    <main class="p-5 w-2/3 mx-auto">
+        <Transition>
+            <component :is="`screen${currentScreen}`" />
+        </Transition>
     </main>
 </template>
 
@@ -25,3 +27,15 @@ export default {
     }
 };
 </script>
+
+<style>
+    .v-enter-active,
+    .v-leave-active {
+    transition: opacity 0.5s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+</style>
