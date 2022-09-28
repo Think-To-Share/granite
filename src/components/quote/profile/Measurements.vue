@@ -155,7 +155,10 @@
             </div>
 
             <dimensions v-for="(dimension, index) in dimensions" :key="index" />
-            <p class="polishededgestxt mb-0 mt-5">
+
+             <button class="piece-btn" v-if="selected_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
+
+            <p class="polishededgestxt mb-0">
                 The estimated worktop profile is
                 <u><strong>0 mm</strong></u> based on measurement entered above
             </p>
@@ -180,6 +183,10 @@ export default {
             this.project_size = true;
             this.project_plan = null;
         },
+
+        pushDimension() {
+            this.dimensions.push([{ length: "", width: "" }])
+        }
     },
     components: {
     dimensions: Dimensions,
@@ -417,6 +424,22 @@ export default {
         color: #3c7c8e;
         font-weight: 600;
         @include font-size(1.2rem);
+    }
+    .piece-btn{
+        border: none;
+        background-color: #3c7c8e;
+        color:#fff;
+        padding: 10px 20px;
+        @include font-size(1.2rem);
+        font-weight: 400;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: all 0.5s ease 0s;
+        margin-top: 10px;
+        &:hover{
+            background-color: #3b96af;  
+        }
     }
 }
 </style>
