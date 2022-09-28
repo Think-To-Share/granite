@@ -4,8 +4,8 @@
             <div class="options-main card-inner">
                 <h5 class="options-heading">Do you require <strong>Upstands</strong> (in metres)?</h5>
                 <div class="round-container">
-                    <button class="granite-round-btn" :class="{filled: upstands_required}" @click="upstands_required=true">YES</button>
-                    <button class="granite-round-btn" :class="{filled: upstands_required === false}" @click="upstands_required=false">NO</button>
+                    <RoundButton :is_active="upstands_required" @click="upstands_required=true">YES</RoundButton>
+                    <RoundButton :is_active="upstands_required === false" @click="upstands_required=false">NO</RoundButton>
                 </div>
                 <div class="row align-items-center" v-if="upstands_required">
                     <div class="col-6">
@@ -23,8 +23,8 @@
             <div class="worktop card-inner">
                 <h5 class="options-heading">Do you require any other <strong>Worktop Options</strong> not mentioned here?</h5>
                 <div class="round-container">
-                    <button class="granite-round-btn" :class="{filled: worktop_required}" @click="worktop_required=true">YES</button>
-                    <button class="granite-round-btn" :class="{filled: worktop_required === false}" @click="worktop_required=false">NO</button>
+                    <RoundButton :is_active="worktop_required" @click="worktop_required=true">YES</RoundButton>
+                    <RoundButton :is_active="worktop_required === false" @click="worktop_required=false">NO</RoundButton>
                 </div>
                 <div class="row align-items-center" v-if="worktop_required">
                     <div class="col-8">
@@ -42,19 +42,20 @@
 <script>
 import { useQuoteStore } from '@/stores/quote'
 import { mapActions } from "pinia"
+import RoundButton from '@/components/share/RoundButton.vue';
 
 export default {
-    data(){
+    data() {
         return {
             range: 0,
             upstands_required: true,
             worktop_required: null,
-
-        }
+        };
     },
-    methods:{
-        ...mapActions(useQuoteStore, ['changeScreen'])
-    }
+    methods: {
+        ...mapActions(useQuoteStore, ["changeScreen"])
+    },
+    components: { RoundButton }
 }
 </script>
 
@@ -74,37 +75,7 @@ export default {
             font-family: var(--primary-font);
             @include font-size(1.3rem);
         }
-        .round-container{
 
-            .granite-round-btn{
-                font-family:var(--primary-font);
-                padding : 2%;
-                border-radius : 60%;
-                transition: all 0.5s ease 0s;  
-                background-color: #fff;
-                border : 6px solid #ddd;
-                color : #888;
-                
-
-                &.filled{
-                    background-color: #3C7C8E;
-                    border : 6px solid #244a55;
-                    color : #fff;
-                
-                    
-                }
-
-                &:last-child{
-                    margin : 2%; 
-                }
-
-                &:hover{
-                    background-color: #3C7C8E;
-                    border : 6px solid #244a55;
-                    color : #fff;
-                }
-            }
-        }
         textarea{
             &::placeholder{
                 color: #a39e9ed9;
