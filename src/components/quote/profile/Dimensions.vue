@@ -1,5 +1,5 @@
 <template>
-    <div class="row form-group mmcalculator">
+    <div class="row form-group mmcalculator align-items-center">
         <div class="col-lg-1 piece-box">
             <label class="mesaure-box__label" for="">Piece<br>
                 <span>A</span> 
@@ -19,14 +19,16 @@
             </div>
         </div>
         <div class="col-lg-2">
-            <button class="minus-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></button>
+            <button class="minus-btn" @click="$emit('remove')" v-if="has_minus_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+            </button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    props: ['dimension', 'has_minus_btn']
 }
 </script>
 

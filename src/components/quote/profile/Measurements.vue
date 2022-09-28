@@ -139,24 +139,25 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" v-if="project_size && selected_layout">
             <h4 class="card-title granite-card-header mb-5">
                 What are the Sizes for each piece in mm(millimetres)?
             </h4>
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <p class="length-width-part">LENGTH</p>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <p class="length-width-part">WIDTH</p>
                 </div>
+                <div class="col-lg-2"></div>
             </div>
 
-            <dimensions v-for="(dimension, index) in dimensions" :key="index" />
+            <dimensions v-for="(dimension, index) in dimensions" :key="index" :has_minus_btn="selected_layout === 'custom' && index > 0" :dimension="dimension" @remove="removeDimension(index)" />
 
-             <button class="piece-btn" v-if="selected_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
+             <button class="piece-btn" :disabled="dimensions.length >= 26" v-if="selected_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
 
             <p class="polishededgestxt mb-0">
                 The estimated worktop profile is
@@ -178,6 +179,10 @@ export default {
             selected_layout: null,
         };
     },
+    components: {
+        dimensions: Dimensions,
+        RoundButton: RoundButton,
+    },
     methods: {
         projectSize() {
             this.project_size = true;
@@ -185,13 +190,17 @@ export default {
         },
 
         pushDimension() {
-            this.dimensions.push([{ length: "", width: "" }])
+            if(this.dimensions.length >= 26) {
+                return;
+            }
+
+            this.dimensions.push({ length: "", width: "" })
+        },
+
+        removeDimension(index) {
+            this.dimensions.splice(index, 1)
         }
-    },
-    components: {
-    dimensions: Dimensions,
-    RoundButton
-},
+    }
 };
 </script>
 
