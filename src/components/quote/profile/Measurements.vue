@@ -5,20 +5,13 @@
                 Do you know your Project Sizes?
             </h4>
             <div class="round-container">
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_size }"
-                    @click="projectSize()"
-                >
-                    YES
-                </button>
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_size === false }"
+                <RoundButton :is_active="project_size" @click="projectSize()">YES</RoundButton>
+                <RoundButton
+                    :is_active="project_size === false"
                     @click="project_size = false"
                 >
                     NO
-                </button>
+                </RoundButton>
             </div>
         </div>
 
@@ -117,20 +110,18 @@
                 Do you have a Project Plan?
             </h4>
             <div class="round-container">
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_plan }"
+                <RoundButton
+                    :is_active="project_plan"
                     @click="project_plan = true"
                 >
                     YES
-                </button>
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_plan === false }"
+                </RoundButton>
+                <RoundButton
+                    :is_active="project_plan === false"
                     @click="project_plan = false"
                 >
                     NO
-                </button>
+                </RoundButton>
             </div>
         </div>
         <div class="card-body button-card" v-if="project_plan !== null">
@@ -171,6 +162,7 @@
 
 <script>
 import Dimensions from "@/components/quote/profile/Dimensions.vue";
+import RoundButton from "@/components/share/RoundButton.vue";
 export default {
     data() {
         return {
@@ -187,8 +179,9 @@ export default {
         },
     },
     components: {
-        dimensions: Dimensions,
-    },
+    dimensions: Dimensions,
+    RoundButton
+},
 };
 </script>
 
@@ -317,32 +310,6 @@ export default {
     }
 
     .round-container {
-        .granite-round-btn {
-            font-family: var(--primary-font);
-            padding: 2%;
-            border-radius: 60%;
-            transition: all 0.5s ease 0s;
-            background-color: #fff;
-            border: 6px solid #ddd;
-            color: #888;
-
-            &.filled {
-                background-color: #3c7c8e;
-                border: 6px solid #244a55;
-                color: #fff;
-            }
-
-            &:last-child {
-                margin: 2%;
-            }
-
-            &:hover {
-                background-color: #3c7c8e;
-                border: 6px solid #244a55;
-                color: #fff;
-            }
-        }
-
         // .granite-round-btn-filled{
         //     background-color: #3C7C8E;
         //     border : 6px solid #244a55;
