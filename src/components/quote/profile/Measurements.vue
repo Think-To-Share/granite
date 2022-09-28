@@ -5,23 +5,18 @@
                 Do you know your Project Sizes?
             </h4>
             <div class="round-container">
-                <RoundButton :is_active="project_size" @click="projectSize()">YES</RoundButton>
-                <RoundButton
-                    :is_active="project_size === false"
-                    @click="project_size = false"
-                >
-                    NO
-                </RoundButton>
+                <RoundButton :is_active="has_project_size" @click="setHasProjectSize(true)">YES</RoundButton>
+                <RoundButton :is_active="has_project_size === false" @click="setHasProjectSize(false)">NO</RoundButton>
             </div>
         </div>
 
-        <div class="card-body layout-card" v-if="project_size">
+        <div class="card-body layout-card" v-if="has_project_size">
             <h4 class="card-title granite-card-header mb-5">
                 What Layout is your kitchen?
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 'l'" title="L Shape / Gallery">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length: '',width: ''},{length: '',width}]; selected_layout = 'l'" title="L Shape / Gallery">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -105,7 +100,7 @@
             </div>
         </div>
 
-        <div class="card-body button-card" v-if="!project_size">
+        <div class="card-body button-card" v-if="!has_project_size">
             <h4 class="card-title granite-card-header mb-5">
                 Do you have a Project Plan?
             </h4>
@@ -139,7 +134,7 @@
             </div>
         </div>
 
-        <div class="card-body" v-if="project_size && selected_layout">
+        <div class="card-body" v-if="has_project_size && selected_layout">
             <h4 class="card-title granite-card-header mb-5">
                 What are the Sizes for each piece in mm(millimetres)?
             </h4>
@@ -170,10 +165,11 @@
 <script>
 import Dimensions from "@/components/quote/profile/Dimensions.vue";
 import RoundButton from "@/components/share/RoundButton.vue";
+import { mapActions, mapState } from 'pinia';
+import { useQuoteProfileStore } from "@/stores/quote-profile";
 export default {
     data() {
         return {
-            project_size: true,
             project_plan: null,
             dimensions: [{ length: "", width: "" }],
             selected_layout: null,
@@ -184,10 +180,7 @@ export default {
         RoundButton: RoundButton,
     },
     methods: {
-        projectSize() {
-            this.project_size = true;
-            this.project_plan = null;
-        },
+        ...mapActions(useQuoteProfileStore, ['setHasProjectSize']),
 
         pushDimension() {
             if(this.dimensions.length >= 26) {
@@ -200,6 +193,9 @@ export default {
         removeDimension(index) {
             this.dimensions.splice(index, 1)
         }
+    },
+    computed: {
+        ...mapState(useQuoteProfileStore, ['has_project_size'])
     }
 };
 </script>
