@@ -134,6 +134,9 @@
             </div>
         </div>
         <div class="card-body button-card" v-if="project_plan !== null">
+            <p class="plan-upload-text">Please attached your Kitchen Plan here and we will work out your sizes</p>
+            <button class="plan-upload-btn">Upload a Kitchen Plan</button>
+
             <h4 class="card-title granite-card-header mb-5">
                 How would you describe the Size of your Project?
             </h4>
@@ -314,6 +317,27 @@ export default {
         background-color: #fff;
         border-bottom: none;
         color: #3c7c8e;
+    }
+    .plan-upload-text{
+        @include font-size(1.1rem);
+        font-weight: 400;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    .plan-upload-btn{
+        border: none;
+        background-color: #3c7c8e;
+        color:#fff;
+        padding: 15px 30px;
+        @include font-size(1.1rem);
+        font-weight: 400;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: all 0.5s ease 0s;
+        &:hover{
+          background-color: #3b96af;  
+        }
     }
 
     .round-container {
