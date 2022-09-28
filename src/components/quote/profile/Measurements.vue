@@ -234,15 +234,15 @@ export default {
                 visibility:hidden;
             }
 
-            // &:hover {
-            //     background-color: #3c7c8e;
-            //     color: #fff;
+            &:hover {
+                background-color: #3c7c8e;
+                color: #fff;
 
-            //     span {
-            //         background-color: #fff !important;
-            //         color: #3c7c8e !important;
-            //     }
-            // }
+                span {
+                    background-color: #fff !important;
+                    color: #3c7c8e !important;
+                }
+            }
 
             .row-box-A {
                 height: 130px;
