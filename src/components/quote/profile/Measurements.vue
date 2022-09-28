@@ -48,8 +48,8 @@
                             <div class="row-box-A">
                                 <div class="col-box">
                                     <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
+                                    <span class="mdl c ">C</span>
+                                    <span class="right d ">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -79,7 +79,7 @@
                                 <div class="col-box">
                                     <span class="left b ">B</span>
                                     <span class="mdl c ">C</span>
-                                    <span class="right d">D</span>
+                                    <span class="right d right-off" style="background:transparent;">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -92,9 +92,9 @@
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
-                                    <span class="left b " style="background:transparent;">B</span>
+                                    <span class="left b  left-off" style="background:transparent;">B</span>
                                     <span class="mdl c">C</span>
-                                    <span class="right d ">D</span>
+                                    <span class="right d right-off" style="background:transparent;">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -209,6 +209,7 @@ export default {
             background-color: rgba(246, 246, 246, 0.85);
         }
     }
+    
 
     .layout-card {
         .row-box-A {
@@ -225,15 +226,23 @@ export default {
             background-color: #fff;
             transition: all 0.5s ease 0s;
 
-            &:hover {
-                background-color: #3c7c8e;
-                color: #fff;
-
-                span {
-                    background-color: #fff !important;
-                    color: #3c7c8e !important;
-                }
+            .left-off{ 
+                visibility:hidden;
             }
+
+            .right-off{ 
+                visibility:hidden;
+            }
+
+            // &:hover {
+            //     background-color: #3c7c8e;
+            //     color: #fff;
+
+            //     span {
+            //         background-color: #fff !important;
+            //         color: #3c7c8e !important;
+            //     }
+            // }
 
             .row-box-A {
                 height: 130px;
