@@ -28,7 +28,7 @@
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 'l'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 'l'" title="L Shape / Gallery">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="dimensions=[{ length,width},{length,width},{length,width},{length,width}]; selected_layout = 'u_i'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="dimensions=[{ length,width},{length,width},{length,width},{length,width}]; selected_layout = 'u_i'" title="U Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'u'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'u'" title="U Shape">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'l_i'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'l_i'" title="L Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 's_i'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 's_i'" title="Straight &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
