@@ -16,7 +16,7 @@
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length: '',width: ''},{length: '',width}]; selected_layout = 'l'" title="L Shape / Gallery">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="setNDimensions(2); selected_layout = 'l'" title="L Shape / Gallery">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="dimensions=[{ length,width},{length,width},{length,width},{length,width}]; selected_layout = 'u_i'" title="U Shape &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="setNDimensions(4); selected_layout = 'u_i'" title="U Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'u'" title="U Shape">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="setNDimensions(3); selected_layout = 'u'" title="U Shape">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'l_i'" title="L Shape &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="setNDimensions(3); selected_layout = 'l_i'" title="L Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 's_i'" title="Straight &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="setNDimensions(2); selected_layout = 's_i'" title="Straight &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'custom'}" @click="dimensions=[{ length,width}]; selected_layout = 'custom'">
+                    <div class="card text-start select-layout" :class="{active:selected_layout === 'custom'}" @click="setNDimensions(1); selected_layout = 'custom'">
                         <div class="card-body custom-size">
                             <p class="">Custom Sizes</p>
                         </div>
@@ -150,7 +150,7 @@
                 <div class="col-lg-2"></div>
             </div>
 
-            <dimensions v-for="(dimension, index) in dimensions" :key="index" :has_minus_btn="selected_layout === 'custom' && index > 0" :dimension="dimension" @remove="removeDimension(index)" />
+            <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :has_minus_btn="selected_layout === 'custom' && index > 0" :dimension="dimension" @remove="removeDimension(index)" />
 
              <button class="piece-btn" :disabled="dimensions.length >= 26" v-if="selected_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
 
@@ -180,7 +180,7 @@ export default {
         RoundButton: RoundButton,
     },
     methods: {
-        ...mapActions(useQuoteProfileStore, ['setHasProjectSize']),
+        ...mapActions(useQuoteProfileStore, ['setHasProjectSize', 'setNDimensions']),
 
         pushDimension() {
             if(this.dimensions.length >= 26) {
@@ -195,7 +195,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(useQuoteProfileStore, ['has_project_size'])
+        ...mapState(useQuoteProfileStore, ['has_project_size', 'project_dimensions'])
     }
 };
 </script>

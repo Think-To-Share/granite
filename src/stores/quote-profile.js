@@ -49,6 +49,19 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             }
 
             this.has_worktop = value
+        },
+
+        setNDimensions(value) {
+            const dimensions = []
+
+            for (let i = 0; i < value; i++) {
+                dimensions.push({
+                    length: '',
+                    width: '',
+                })
+            }
+
+            this.project_dimensions = dimensions;
         }
     }
 })
