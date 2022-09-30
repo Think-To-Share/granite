@@ -16,7 +16,7 @@
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="setNDimensions(2); selected_layout = 'l'" title="L Shape / Gallery">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'l'}" @click="changeLayout('l', 2)" title="L Shape / Gallery">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="setNDimensions(4); selected_layout = 'u_i'" title="U Shape &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'u_i'}" @click="changeLayout('u_i', 4)" title="U Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="setNDimensions(3); selected_layout = 'u'" title="U Shape">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'u'}" @click="changeLayout('u', 3)" title="U Shape">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="setNDimensions(3); selected_layout = 'l_i'" title="L Shape &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'l_i'}" @click="changeLayout('l_i', 3)" title="L Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="setNDimensions(2); selected_layout = 's_i'" title="Straight &amp; Island">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 's_i'}" @click="changeLayout('s_i', 2)" title="Straight &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'custom'}" @click="setNDimensions(1); selected_layout = 'custom'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'custom'}" @click="changeLayout('custom', 1)">
                         <div class="card-body custom-size">
                             <p class="">Custom Sizes</p>
                         </div>
@@ -105,23 +105,15 @@
                 Do you have a Project Plan?
             </h4>
             <div class="round-container">
-                <RoundButton
-                    :is_active="project_plan"
-                    @click="project_plan = true"
-                >
-                    YES
-                </RoundButton>
-                <RoundButton
-                    :is_active="project_plan === false"
-                    @click="project_plan = false"
-                >
-                    NO
-                </RoundButton>
+                <RoundButton :is_active="has_project_plan" @click="setHasProjectPlan(true)">YES</RoundButton>
+                <RoundButton :is_active="has_project_plan === false" @click="setHasProjectPlan(false)">NO</RoundButton>
             </div>
         </div>
-        <div class="card-body button-card" v-if="project_plan !== null">
-            <p class="plan-upload-text">Please attached your Kitchen Plan here and we will work out your sizes</p>
-            <button class="plan-upload-btn">Upload a Kitchen Plan</button>
+        <div class="card-body button-card" v-if="has_project_plan !== null">
+            <div v-if="has_project_plan">
+                <p class="plan-upload-text">Please attached your Kitchen Plan here and we will work out your sizes</p>
+                <button class="plan-upload-btn">Upload a Kitchen Plan</button>
+            </div>
 
             <h4 class="card-title granite-card-header mb-5">
                 How would you describe the Size of your Project?
@@ -134,7 +126,7 @@
             </div>
         </div>
 
-        <div class="card-body" v-if="has_project_size && selected_layout">
+        <div class="card-body" v-if="has_project_size && project_layout">
             <h4 class="card-title granite-card-header mb-5">
                 What are the Sizes for each piece in mm(millimetres)?
             </h4>
@@ -150,9 +142,9 @@
                 <div class="col-lg-2"></div>
             </div>
 
-            <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :has_minus_btn="selected_layout === 'custom' && index > 0" :dimension="dimension" @remove="removeDimension(index)" />
+            <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :index="index" :has_minus_btn="project_layout === 'custom' && index > 0" :dimension="dimension" />
 
-             <button class="piece-btn" :disabled="dimensions.length >= 26" v-if="selected_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
+             <button class="piece-btn" :disabled="project_dimensions.length >= 26" v-if="project_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
 
             <p class="polishededgestxt mb-0">
                 The estimated worktop profile is
@@ -171,8 +163,6 @@ export default {
     data() {
         return {
             project_plan: null,
-            dimensions: [{ length: "", width: "" }],
-            selected_layout: null,
         };
     },
     components: {
@@ -180,22 +170,15 @@ export default {
         RoundButton: RoundButton,
     },
     methods: {
-        ...mapActions(useQuoteProfileStore, ['setHasProjectSize', 'setNDimensions']),
+        ...mapActions(useQuoteProfileStore, ['setHasProjectSize', 'setHasProjectPlan', 'setNDimensions', 'pushDimension', 'setProjectLayout']),
 
-        pushDimension() {
-            if(this.dimensions.length >= 26) {
-                return;
-            }
-
-            this.dimensions.push({ length: "", width: "" })
-        },
-
-        removeDimension(index) {
-            this.dimensions.splice(index, 1)
+        changeLayout(layout, dimensions) {
+            this.setProjectLayout(layout),
+            this.setNDimensions(dimensions)
         }
     },
     computed: {
-        ...mapState(useQuoteProfileStore, ['has_project_size', 'project_dimensions'])
+        ...mapState(useQuoteProfileStore, ['has_project_size', 'has_project_plan', 'project_dimensions', 'project_layout'])
     }
 };
 </script>

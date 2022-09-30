@@ -2,12 +2,12 @@
     <div class="row form-group mmcalculator align-items-center">
         <div class="col-lg-1 piece-box">
             <label class="mesaure-box__label" for="">Piece<br>
-                <span>A</span> 
+                <span>{{ indexLetter }}</span> 
             </label>
         </div>
         <div class="col-lg-4 mesaure-box__input">
             <div class="input-box"> 
-                <input placeholder="2500mm" type="text" name="length" class="form-control numberonly" value=""> 
+                <input placeholder="2500mm" class="form-control" v-model="dimension.length"> 
             </div>
         </div>
         <div class="col-lg-1 piece-box">
@@ -15,11 +15,11 @@
         </div>
         <div class="col-lg-4 mesaure-box__input">
             <div class="input-box"> 
-                <input placeholder="600mm" type="text" name="length" class="form-control numberonly" value=""> 
+                <input placeholder="600mm" class="form-control" v-model="dimension.width"> 
             </div>
         </div>
         <div class="col-lg-2">
-            <button class="minus-btn" @click="$emit('remove')" v-if="has_minus_btn">
+            <button class="minus-btn" @click="remove()" v-if="has_minus_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
             </button>
         </div>
@@ -27,8 +27,28 @@
 </template>
 
 <script>
+import { mapActions } from 'pinia';
+import { useQuoteProfileStore } from '@/stores/quote-profile';
+
 export default {
-    props: ['dimension', 'has_minus_btn']
+    props: ['dimension', 'has_minus_btn', 'index'],
+
+    methods: {
+        ...mapActions(useQuoteProfileStore, ['removeDimension']),
+
+        remove() {
+            this.removeDimension(this.index)
+        },
+    },
+
+    computed: {
+        indexLetter() {
+            // First letter ASCII value
+            const A = 'A'.charCodeAt(0)
+
+            return String.fromCharCode(A + this.index)
+        }
+    }
 }
 </script>
 

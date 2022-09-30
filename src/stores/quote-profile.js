@@ -43,12 +43,24 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             this.has_upstand = value
         },
 
+        setHasProjectPlan(value) {
+            if(value === false) {
+                this.project_plan_file = null
+            }
+
+            this.has_project_plan = value
+        },
+
         setHasWorktop(value) {
             if(value === false) {
                 this.worktop_option = null
             }
 
             this.has_worktop = value
+        },
+
+        setProjectLayout(value) {
+            this.project_layout = value
         },
 
         setNDimensions(value) {
@@ -62,6 +74,18 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             }
 
             this.project_dimensions = dimensions;
+        },
+
+        pushDimension(dimension = {length: "", width: ""}) {
+            if(this.project_dimensions.length >= 26) {
+                return;
+            }
+
+            this.project_dimensions.push(dimension)
+        },
+
+        removeDimension(index) {
+            this.project_dimensions.splice(index, 1)
         }
     }
 })
