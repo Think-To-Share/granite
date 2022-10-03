@@ -5,30 +5,18 @@
                 Do you know your Project Sizes?
             </h4>
             <div class="round-container">
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_size }"
-                    @click="projectSize()"
-                >
-                    YES
-                </button>
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_size === false }"
-                    @click="project_size = false"
-                >
-                    NO
-                </button>
+                <RoundButton :is_active="has_project_size" @click="setHasProjectSize(true)">YES</RoundButton>
+                <RoundButton :is_active="has_project_size === false" @click="setHasProjectSize(false)">NO</RoundButton>
             </div>
         </div>
 
-        <div class="card-body layout-card" v-if="project_size">
+        <div class="card-body layout-card" v-if="has_project_size">
             <h4 class="card-title granite-card-header mb-5">
                 What Layout is your kitchen?
             </h4>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 'l'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'l'}" @click="changeLayout('l', 2)" title="L Shape / Gallery">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -43,13 +31,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u_i'}" @click="dimensions=[{ length,width},{length,width},{length,width},{length,width}]; selected_layout = 'u_i'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'u_i'}" @click="changeLayout('u_i', 4)" title="U Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
                                     <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
+                                    <span class="mdl c ">C</span>
+                                    <span class="right d ">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -58,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'u'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'u'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'u'}" @click="changeLayout('u', 3)" title="U Shape">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
@@ -73,13 +61,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'l_i'}" @click="dimensions=[{ length,width},{length,width},{length,width}]; selected_layout = 'l_i'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'l_i'}" @click="changeLayout('l_i', 3)" title="L Shape &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
                                     <span class="left b ">B</span>
                                     <span class="mdl c ">C</span>
-                                    <span class="right d">D</span>
+                                    <span class="right d right-off" style="background:transparent;">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -88,13 +76,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 's_i'}" @click="dimensions=[{ length,width},{length,width}]; selected_layout = 's_i'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 's_i'}" @click="changeLayout('s_i', 2)" title="Straight &amp; Island">
                         <div class="card-body">
                             <div class="row-box-A">
                                 <div class="col-box">
-                                    <span class="left b " style="background:transparent;">B</span>
+                                    <span class="left b  left-off" style="background:transparent;">B</span>
                                     <span class="mdl c">C</span>
-                                    <span class="right d ">D</span>
+                                    <span class="right d right-off" style="background:transparent;">D</span>
                                 </div>
                                 <br />
                                 <span class="a bottom activeBlock">A</span>
@@ -103,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:selected_layout === 'custom'}" @click="dimensions=[{ length,width}]; selected_layout = 'custom'">
+                    <div class="card text-start select-layout" :class="{active:project_layout === 'custom'}" @click="changeLayout('custom', 1)">
                         <div class="card-body custom-size">
                             <p class="">Custom Sizes</p>
                         </div>
@@ -112,28 +100,21 @@
             </div>
         </div>
 
-        <div class="card-body button-card" v-if="!project_size">
+        <div class="card-body button-card" v-if="!has_project_size">
             <h4 class="card-title granite-card-header mb-5">
                 Do you have a Project Plan?
             </h4>
             <div class="round-container">
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_plan }"
-                    @click="project_plan = true"
-                >
-                    YES
-                </button>
-                <button
-                    class="granite-round-btn"
-                    :class="{ filled: project_plan === false }"
-                    @click="project_plan = false"
-                >
-                    NO
-                </button>
+                <RoundButton :is_active="has_project_plan" @click="setHasProjectPlan(true)">YES</RoundButton>
+                <RoundButton :is_active="has_project_plan === false" @click="setHasProjectPlan(false)">NO</RoundButton>
             </div>
         </div>
-        <div class="card-body button-card" v-if="project_plan !== null">
+        <div class="card-body button-card" v-if="has_project_plan !== null">
+            <div v-if="has_project_plan">
+                <p class="plan-upload-text">Please attached your Kitchen Plan here and we will work out your sizes</p>
+                <button class="plan-upload-btn">Upload a Kitchen Plan</button>
+            </div>
+
             <h4 class="card-title granite-card-header mb-5">
                 How would you describe the Size of your Project?
             </h4>
@@ -145,23 +126,27 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" v-if="has_project_size && project_layout">
             <h4 class="card-title granite-card-header mb-5">
                 What are the Sizes for each piece in mm(millimetres)?
             </h4>
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <p class="length-width-part">LENGTH</p>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <p class="length-width-part">WIDTH</p>
                 </div>
+                <div class="col-lg-2"></div>
             </div>
 
-            <dimensions v-for="(dimension, index) in dimensions" :key="index" />
-            <p class="polishededgestxt mb-0 mt-5">
+            <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :index="index" :has_minus_btn="project_layout === 'custom' && index > 0" :dimension="dimension" />
+
+             <button class="piece-btn" :disabled="project_dimensions.length >= 26" v-if="project_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
+
+            <p class="polishededgestxt mb-0">
                 The estimated worktop profile is
                 <u><strong>0 mm</strong></u> based on measurement entered above
             </p>
@@ -171,24 +156,30 @@
 
 <script>
 import Dimensions from "@/components/quote/profile/Dimensions.vue";
+import RoundButton from "@/components/share/RoundButton.vue";
+import { mapActions, mapState } from 'pinia';
+import { useQuoteProfileStore } from "@/stores/quote-profile";
 export default {
     data() {
         return {
-            project_size: true,
             project_plan: null,
-            dimensions: [{ length: "", width: "" }],
-            selected_layout: null,
         };
-    },
-    methods: {
-        projectSize() {
-            this.project_size = true;
-            this.project_plan = null;
-        },
     },
     components: {
         dimensions: Dimensions,
+        RoundButton: RoundButton,
     },
+    methods: {
+        ...mapActions(useQuoteProfileStore, ['setHasProjectSize', 'setHasProjectPlan', 'setNDimensions', 'pushDimension', 'setProjectLayout']),
+
+        changeLayout(layout, dimensions) {
+            this.setProjectLayout(layout),
+            this.setNDimensions(dimensions)
+        }
+    },
+    computed: {
+        ...mapState(useQuoteProfileStore, ['has_project_size', 'has_project_plan', 'project_dimensions', 'project_layout'])
+    }
 };
 </script>
 
@@ -209,6 +200,7 @@ export default {
             background-color: rgba(246, 246, 246, 0.85);
         }
     }
+    
 
     .layout-card {
         .row-box-A {
@@ -224,6 +216,14 @@ export default {
         .select-layout {
             background-color: #fff;
             transition: all 0.5s ease 0s;
+
+            .left-off{ 
+                visibility:hidden;
+            }
+
+            .right-off{ 
+                visibility:hidden;
+            }
 
             &:hover {
                 background-color: #3c7c8e;
@@ -306,34 +306,29 @@ export default {
         border-bottom: none;
         color: #3c7c8e;
     }
+    .plan-upload-text{
+        @include font-size(1.1rem);
+        font-weight: 400;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    .plan-upload-btn{
+        border: none;
+        background-color: #3c7c8e;
+        color:#fff;
+        padding: 15px 30px;
+        @include font-size(1.1rem);
+        font-weight: 400;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: all 0.5s ease 0s;
+        &:hover{
+          background-color: #3b96af;  
+        }
+    }
 
     .round-container {
-        .granite-round-btn {
-            font-family: var(--primary-font);
-            padding: 2%;
-            border-radius: 60%;
-            transition: all 0.5s ease 0s;
-            background-color: #fff;
-            border: 6px solid #ddd;
-            color: #888;
-
-            &.filled {
-                background-color: #3c7c8e;
-                border: 6px solid #244a55;
-                color: #fff;
-            }
-
-            &:last-child {
-                margin: 2%;
-            }
-
-            &:hover {
-                background-color: #3c7c8e;
-                border: 6px solid #244a55;
-                color: #fff;
-            }
-        }
-
         // .granite-round-btn-filled{
         //     background-color: #3C7C8E;
         //     border : 6px solid #244a55;
@@ -417,6 +412,22 @@ export default {
         color: #3c7c8e;
         font-weight: 600;
         @include font-size(1.2rem);
+    }
+    .piece-btn{
+        border: none;
+        background-color: #3c7c8e;
+        color:#fff;
+        padding: 10px 20px;
+        @include font-size(1.2rem);
+        font-weight: 400;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: all 0.5s ease 0s;
+        margin-top: 10px;
+        &:hover{
+            background-color: #3b96af;  
+        }
     }
 }
 </style>
