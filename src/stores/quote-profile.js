@@ -86,6 +86,10 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
         removeDimension(index) {
             this.project_dimensions.splice(index, 1)
-        }
+        },
+
+        setProjectPlanSize(value) {
+            this.project_plan_size = value
+        },
     }
 })

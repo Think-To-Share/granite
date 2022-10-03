@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
     button {
-        @apply bg-white rounded-full p-6 text-gray-500 border-[6px] border-gray-200 hover:bg-primary-500 hover:text-white hover:border-primary-700 transition-colors duration-500 ease-in-out;
+        @apply bg-white px-7 py-8 text-gray-500 border-[6px] border-gray-200 hover:bg-primary-500 hover:text-white hover:border-primary-700 transition-colors duration-500 ease-in-out;
 
         &.filled {
             @apply bg-primary-500 text-white border-primary-700;
