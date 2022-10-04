@@ -1,102 +1,53 @@
 <template>
-    <div class="card text-start measurements-card mb-5">
-        <div class="card-body button-card">
+    <div class="shadow-md border border-gray-200 rounded-md">
+        <div class="px-6 py-4">
             <CardTitle>Do you know your Project Sizes?</CardTitle>
             <div class="flex gap-x-4">
                 <RoundButton :is_active="has_project_size" @click="setHasProjectSize(true)">YES</RoundButton>
                 <RoundButton :is_active="has_project_size === false" @click="setHasProjectSize(false)">NO</RoundButton>
             </div>
         </div>
+        <div v-if="has_project_size">
+            <div class="px-6 py-4">
+                <CardTitle>What Layout is your kitchen?</CardTitle>
+                
+                <div class="grid grid-cols-3 grid-rows-2 items-center gap-4">
+                    <KitchenLayout title="L Shape / Gallery" :has_left="true" :active="project_layout === 'l'" @click="changeLayout('l', 2)" />
+                    <KitchenLayout title="U Shape & Island" :has_left="true" :has_middle="true" :has_right="true" :active="project_layout === 'u_i'" @click="changeLayout('u_i', 4)" />
+                    <KitchenLayout title="U Shape" :has_left="true" :has_right="true" :active="project_layout === 'u'" @click="changeLayout('u', 3)" />
+                    <KitchenLayout title="L Shape & Island" :has_left="true" :has_middle="true" :active="project_layout === 'l_i'" @click="changeLayout('l_i', 3)" />
+                    <KitchenLayout title="Straight & Island" :has_middle="true" :active="project_layout === 's_i'" @click="changeLayout('s_i', 2)" />
+                    <button title="Custom Sizes" class="min-h-full border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out hover:bg-primary-400 hover:text-white" :class="{'bg-primary-400 text-white': project_layout === 'custom'}" @click="changeLayout('custom', 1)">Custom Sizes</button>
+                </div>
+            </div>
 
-        <div class="card-body layout-card" v-if="has_project_size">
-            <CardTitle>What Layout is your kitchen?</CardTitle>
-            <div class="row justify-content-center align-items-center g-2">
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 'l'}" @click="changeLayout('l', 2)" title="L Shape / Gallery">
-                        <div class="card-body">
-                            <div class="row-box-A">
-                                <div class="col-box">
-                                    <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d disabled">D</span>
-                                </div>
-                                <br />
-                                <span class="a bottom activeBlock">A</span>
-                            </div>
-                        </div>
+            <div class="px-6 py-4" v-if="project_layout">
+                <CardTitle>What are the Sizes for each piece in mm(millimetres)?</CardTitle>
+
+                <div class="flex gap-x-3 items-center mb-3">
+                    <div class="w-1/12"></div>
+                    <div class="w-4/12 text-center font-bold text-primary-500 text-xl">
+                        <p class="">LENGTH</p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 'u_i'}" @click="changeLayout('u_i', 4)" title="U Shape &amp; Island">
-                        <div class="card-body">
-                            <div class="row-box-A">
-                                <div class="col-box">
-                                    <span class="left b activeBlock">B</span>
-                                    <span class="mdl c ">C</span>
-                                    <span class="right d ">D</span>
-                                </div>
-                                <br />
-                                <span class="a bottom activeBlock">A</span>
-                            </div>
-                        </div>
+                    <div class="w-1/12"></div>
+                    <div class="w-4/12 text-center font-bold text-primary-500 text-xl">
+                        <p>WIDTH</p>
                     </div>
+                    <div class="w-2/12"></div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 'u'}" @click="changeLayout('u', 3)" title="U Shape">
-                        <div class="card-body">
-                            <div class="row-box-A">
-                                <div class="col-box">
-                                    <span class="left b activeBlock">B</span>
-                                    <span class="mdl c disabled">C</span>
-                                    <span class="right d ">D</span>
-                                </div>
-                                <br />
-                                <span class="a bottom activeBlock">A</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 'l_i'}" @click="changeLayout('l_i', 3)" title="L Shape &amp; Island">
-                        <div class="card-body">
-                            <div class="row-box-A">
-                                <div class="col-box">
-                                    <span class="left b ">B</span>
-                                    <span class="mdl c ">C</span>
-                                    <span class="right d right-off" style="background:transparent;">D</span>
-                                </div>
-                                <br />
-                                <span class="a bottom activeBlock">A</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 's_i'}" @click="changeLayout('s_i', 2)" title="Straight &amp; Island">
-                        <div class="card-body">
-                            <div class="row-box-A">
-                                <div class="col-box">
-                                    <span class="left b  left-off" style="background:transparent;">B</span>
-                                    <span class="mdl c">C</span>
-                                    <span class="right d right-off" style="background:transparent;">D</span>
-                                </div>
-                                <br />
-                                <span class="a bottom activeBlock">A</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-start select-layout" :class="{active:project_layout === 'custom'}" @click="changeLayout('custom', 1)">
-                        <div class="card-body custom-size">
-                            <p class="">Custom Sizes</p>
-                        </div>
-                    </div>
-                </div>
+
+                <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :index="index" :has_minus_btn="project_layout === 'custom' && index > 0" :dimension="dimension" />
+
+                <button class="piece-btn" :disabled="project_dimensions.length >= 26" v-if="project_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
+
+                <p class="text-base mt-5 text-gray-500">
+                    The estimated worktop profile is
+                    <span class="font-bold underline">0 mm</span> based on measurement entered above
+                </p>
             </div>
         </div>
 
-        <div class="card-body button-card" v-if="!has_project_size">
+        <div class="px-6 py-4" v-if="has_project_size === false">
             <CardTitle>
                 Do you have a Project Plan?
             </CardTitle>
@@ -105,7 +56,8 @@
                 <RoundButton :is_active="has_project_plan === false" @click="setHasProjectPlan(false)">NO</RoundButton>
             </div>
         </div>
-        <div class="card-body button-card" v-if="has_project_plan !== null">
+
+        <div class="px-6 py-4" v-if="has_project_plan !== null">
             <div v-if="has_project_plan">
                 <p class="text-sm text-gray-500">Please attached your Kitchen Plan here and we will work out your sizes</p>
                 <button class="plan-upload-btn">Upload a Kitchen Plan</button>
@@ -120,31 +72,6 @@
                 <SquareButton :is_active="project_plan_size === 'xl'" @click="setProjectPlanSize('xl')">XL</SquareButton>
             </div>
         </div>
-
-        <div class="card-body" v-if="has_project_size && project_layout">
-            <CardTitle>What are the Sizes for each piece in mm(millimetres)?</CardTitle>
-
-            <div class="flex gap-x-3 items-center mb-3">
-                <div class="w-1/12"></div>
-                <div class="w-4/12 text-center font-bold text-primary-600 text-xl">
-                    <p class="">LENGTH</p>
-                </div>
-                <div class="w-1/12"></div>
-                <div class="w-4/12 text-center font-bold text-primary-600 text-xl">
-                    <p>WIDTH</p>
-                </div>
-                <div class="w-2/12"></div>
-            </div>
-
-            <dimensions v-for="(dimension, index) in project_dimensions" :key="index" :index="index" :has_minus_btn="project_layout === 'custom' && index > 0" :dimension="dimension" />
-
-            <button class="piece-btn" :disabled="project_dimensions.length >= 26" v-if="project_layout === 'custom'" @click="pushDimension()"> + Add another piece</button>
-
-            <p class="text-base mt-5 text-gray-500">
-                The estimated worktop profile is
-                <span class="font-bold underline">0 mm</span> based on measurement entered above
-            </p>
-        </div>
     </div>
 </template>
 
@@ -155,6 +82,7 @@ import { mapActions, mapState } from 'pinia';
 import { useQuoteProfileStore } from "@/stores/quote-profile";
 import SquareButton from "@/components/share/SquareButton.vue";
 import CardTitle from "@/components/share/card/Title.vue";
+import KitchenLayout from "@/components/quote/profile/KitchenLayout.vue";
 
 export default {
     data() {
@@ -166,12 +94,17 @@ export default {
     dimensions: Dimensions,
     RoundButton: RoundButton,
     SquareButton,
-    CardTitle
+    CardTitle,
+    KitchenLayout
 },
     methods: {
         ...mapActions(useQuoteProfileStore, ['setHasProjectSize', 'setHasProjectPlan', 'setNDimensions', 'pushDimension', 'setProjectLayout', 'setProjectPlanSize']),
 
         changeLayout(layout, dimensions) {
+            if(this.project_layout === layout) {
+                return;
+            }
+
             this.setProjectLayout(layout),
             this.setNDimensions(dimensions)
         }
