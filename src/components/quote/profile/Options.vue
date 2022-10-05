@@ -42,7 +42,7 @@
 <script>
 import { useQuoteStore } from '@/stores/quote'
 import { mapActions } from "pinia"
-import RoundButton from '@/components/share/RoundButton.vue';
+import RoundButton from '@/components/ui/RoundButton.vue';
 
 export default {
     data() {

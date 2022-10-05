@@ -1,19 +1,14 @@
 <template>
     <section class="">
         <div class="w-full p-4 shadow-md border border-gray-200 rounded-md">
-            <h4 class=" text-2xl mb-4 text-gray-600">
-                Where will the
-                <span class="font-bold">Installation</span> take
-                place? <span class=" text-red-500 font-bold">*</span>
-            </h4>
+            <CardTitle>Where will the <strong>Installation</strong> take place?</CardTitle>
+            
             <div class="form-container">
                 <form ref="form">
                     <div class="w-full mb-4 flex flex-col">
                         <label class="font-semibold text-gray-500 mb-3">Address Line 1</label>
-                        <input
-                            type="text"
+                        <Input
                             name="address_1"
-                            class="postcode_input"
                             placeholder="Enter Your Address Line 1"
                             required
                         />
@@ -21,7 +16,7 @@
                         
                     <div class="w-full mb-4 flex flex-col">
                         <label class="font-semibold text-gray-500 mb-3">Address Line 2</label>
-                        <input
+                        <Input
                             type="text"
                             name="address_2"
                             class="postcode_input"
@@ -32,7 +27,7 @@
 
                     <div class="w-full mb-4 flex flex-col">
                         <label class="font-semibold text-gray-500 mb-3">Enter Your Postcode</label>
-                        <input
+                        <Input
                             type="text"
                             name="post_code"
                             class="postcode_input"
@@ -53,6 +48,8 @@
 <script>
 import { useQuoteStore } from "@/stores/quote";
 import { mapActions, mapState } from "pinia";
+import Input from "@/components/ui/forms/Input.vue";
+import CardTitle from "@/components/ui/card/Title.vue";
 
 export default {
     computed: {
@@ -60,19 +57,17 @@ export default {
     },
     methods: {
         ...mapActions(useQuoteStore, ["changeScreen"]),
-
         submit(form) {
             const formRequest = new FormData(form);
-
             this.axios
                 .post(`/request-quote-address/${this.quote_id}`, formRequest)
                 .then((res) => {
-                    // Handle
-                });
-
+                // Handle
+            });
             this.changeScreen(3);
         },
     },
+    components: { Input, CardTitle }
 };
 </script>
 

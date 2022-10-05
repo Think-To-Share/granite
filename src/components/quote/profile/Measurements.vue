@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div class="px-6 py-4" v-if="has_project_size === false">
+        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_size === false">
             <CardTitle>Do you have a Project Plan?</CardTitle>
 
             <div class="flex gap-x-4">
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <div class="px-6 py-4" v-if="has_project_plan !== null">
+        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_plan !== null">
             <div v-if="has_project_plan">
                 <p class="text-sm text-gray-500">
                     Please attached your Kitchen Plan here and we will work out your sizes
@@ -130,11 +130,11 @@
 
 <script>
 import Dimensions from '@/components/quote/profile/Dimensions.vue'
-import RoundButton from '@/components/share/RoundButton.vue'
+import RoundButton from '@/components/ui/RoundButton.vue'
 import { mapActions, mapState } from 'pinia'
 import { useQuoteProfileStore } from '@/stores/quote-profile'
-import SquareButton from '@/components/share/SquareButton.vue'
-import CardTitle from '@/components/share/card/Title.vue'
+import SquareButton from '@/components/ui/SquareButton.vue'
+import CardTitle from '@/components/ui/card/Title.vue'
 import KitchenLayout from '@/components/quote/profile/KitchenLayout.vue'
 
 export default {

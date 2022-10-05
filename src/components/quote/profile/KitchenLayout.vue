@@ -29,7 +29,7 @@
 
 <style lang="scss" scoped>
     .layout-grid {
-        @apply w-full grid grid-cols-[auto_auto_auto] grid-rows-[auto_auto] gap-2 items-center justify-between border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out;
+        @apply w-full bg-white grid grid-cols-[auto_auto_auto] grid-rows-[auto_auto] gap-2 items-center justify-between border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out;
 
         div {
             @apply bg-gray-400 text-white py-3 px-4 font-semibold text-sm text-center transition-colors duration-200 ease-in-out;
