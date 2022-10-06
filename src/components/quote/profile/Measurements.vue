@@ -48,8 +48,8 @@
                     />
                     <button
                         title="Custom Sizes"
-                        class="min-h-full border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out hover:bg-primary-400 hover:text-white"
-                        :class="{ 'bg-primary-400 text-white': project_layout === 'custom' }"
+                        class="text-gray-500 font-medium min-h-full border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out hover:bg-primary-400 hover:text-white"
+                        :class="{ 'bg-primary-400 text-white': project_layout === 'custom', 'bg-white': project_layout !== 'custom' }"
                         @click="changeLayout('custom', 1)"
                     >
                         Custom Sizes
@@ -72,26 +72,28 @@
                     <div class="w-2/12"></div>
                 </div>
 
-                <dimensions
-                    v-for="(dimension, index) in project_dimensions"
-                    :key="index"
-                    :index="index"
-                    :has_minus_btn="project_layout === 'custom' && index > 0"
-                    :dimension="dimension"
-                />
+                <TransitionGroup tag="div" class=" flex flex-col gap-y-2">
+                    <dimensions
+                        v-for="(dimension, index) in project_dimensions"
+                        :key="index"
+                        :index="index"
+                        :has_minus_btn="project_layout === 'custom' && index > 0"
+                        :dimension="dimension"
+                    />
+                </TransitionGroup>
 
                 <button
-                    class=""
+                    class="inline-block outline-none font-medium text-white bg-primary-500 px-4 py-3 mt-8 rounded-md hover:bg-primary-600 focus:bg-primary-600 focus:ring-4 focus:ring-primary-500/25 transition-all duration-200 ease-in-out"
                     :disabled="project_dimensions.length >= 26"
                     v-if="project_layout === 'custom'"
                     @click="pushDimension()"
                 >
-                    + Add another piece
+                    Add Another Piece
                 </button>
 
-                <p class="text-base mt-5 text-gray-500">
+                <p class="text-base mt-5 text-slate-500 select-none">
                     The estimated worktop profile is
-                    <span class="font-bold underline">0 mm</span>
+                    <span class="font-bold">0 mm</span>
                     based on measurement entered above
                 </p>
             </div>
@@ -107,11 +109,11 @@
         </div>
 
         <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_plan !== null">
-            <div v-if="has_project_plan">
-                <p class="text-sm text-gray-500">
+            <div class="mb-6" v-if="has_project_plan">
+                <p class="text-sm text-slate-400">
                     Please attached your Kitchen Plan here and we will work out your sizes
                 </p>
-                <button class="plan-upload-btn">Upload a Kitchen Plan</button>
+                <button class="inline-block outline-none font-medium text-lg text-white bg-primary-500 px-6 py-4 mt-2 rounded-md hover:bg-primary-600 focus:bg-primary-600 focus:ring-4 focus:ring-primary-500/25 transition-all duration-200 ease-in-out">Upload a Kitchen Plan</button>
             </div>
 
             <CardTitle>How would you describe the Size of your Project?</CardTitle>

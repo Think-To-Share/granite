@@ -1,6 +1,6 @@
 <template>
     <main class="p-5 w-2/3 mx-auto">
-        <Transition>
+        <Transition name="fade" mode="out-in">
             <component :is="`screen${currentScreen}`" />
         </Transition>
     </main>
@@ -27,19 +27,3 @@ export default {
     }
 };
 </script>
-
-<style>
-    .v-enter-active {
-        transition: opacity 0.5s ease;
-    }
-
-    .v-enter-from {
-        opacity: 0;
-    }
-
-    .v-enter-to {
-        opacity: 1;
-    }
-
-
-</style>
