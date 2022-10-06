@@ -9,7 +9,7 @@
                 </div>
                 <div class="row align-items-center" v-if="upstands_required">
                     <div class="col-6">
-                        <input type="range" class="form-range" min="0" max="20" step="1" v-model="range">
+                        <input type="range" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-200" min="0" max="20" step="1" v-model="range">
                     </div>
                     <div class="col-6">
                         <div class="input-group mb-3">
