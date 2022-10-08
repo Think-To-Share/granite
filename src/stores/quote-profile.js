@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from 'uuid';
 
 export const useQuoteProfileStore = defineStore('quote_profile', {
     state() {
@@ -13,7 +14,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             project_plan_size: null,
             unpolished: '',
             polished: '',
-            drainer: '',
+            drainer: 'No',
             upstand_metres: null,
             worktop_option: null,
         }
@@ -68,6 +69,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
             for (let i = 0; i < value; i++) {
                 dimensions.push({
+                    uuid: uuidv4(),
                     length: '',
                     width: '',
                 })
@@ -81,6 +83,8 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
                 return;
             }
 
+            dimension['uuid'] = uuidv4()
+
             this.project_dimensions.push(dimension)
         },
 
@@ -91,5 +95,9 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
         setProjectPlanSize(value) {
             this.project_plan_size = value
         },
+
+        setProjectPlanFile(file) {
+            this.project_plan_file = file
+        }
     }
 })

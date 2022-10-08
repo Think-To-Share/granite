@@ -1,43 +1,45 @@
 <template>
     <section class="">
-        <div class="w-full p-4 shadow-md border border-gray-200 rounded-md">
-            <CardTitle>Where will the <strong>Installation</strong> take place?</CardTitle>
+        <Card>
+            <template v-slot:title>Where will the <strong>Installation</strong> take place?</template>
             
-            <div class="form-container">
-                <form ref="form">
-                    <div class="w-full mb-4 flex flex-col">
-                        <label class="font-semibold text-gray-500 mb-3">Address Line 1</label>
-                        <Input
-                            name="address_1"
-                            placeholder="Enter Your Address Line 1"
-                            required
-                        />
-                    </div>
-                        
-                    <div class="w-full mb-4 flex flex-col">
-                        <label class="font-semibold text-gray-500 mb-3">Address Line 2</label>
-                        <Input
-                            type="text"
-                            name="address_2"
-                            class="postcode_input"
-                            placeholder="Enter Your Address Line 2"
-                            required
-                        />
-                    </div>
+            <template v-slot:body>
+                <div class="form-container">
+                    <form ref="form">
+                        <div class="w-full mb-4 flex flex-col">
+                            <label class="font-semibold text-gray-500 mb-3">Address Line 1</label>
+                            <Input
+                                name="address_1"
+                                placeholder="Enter Your Address Line 1"
+                                required
+                            />
+                        </div>
+                            
+                        <div class="w-full mb-4 flex flex-col">
+                            <label class="font-semibold text-gray-500 mb-3">Address Line 2</label>
+                            <Input
+                                type="text"
+                                name="address_2"
+                                class="postcode_input"
+                                placeholder="Enter Your Address Line 2"
+                                required
+                            />
+                        </div>
 
-                    <div class="w-full mb-4 flex flex-col">
-                        <label class="font-semibold text-gray-500 mb-3">Enter Your Postcode</label>
-                        <Input
-                            type="text"
-                            name="post_code"
-                            class="postcode_input"
-                            placeholder="Enter Your Postcode"
-                            required
-                        />
-                    </div>
-                </form>
-            </div>
-        </div>
+                        <div class="w-full mb-4 flex flex-col">
+                            <label class="font-semibold text-gray-500 mb-3">Enter Your Postcode</label>
+                            <Input
+                                type="text"
+                                name="post_code"
+                                class="postcode_input"
+                                placeholder="Enter Your Postcode"
+                                required
+                            />
+                        </div>
+                    </form>
+                </div>
+            </template>
+        </Card>
 
         <div class="w-full text-right mt-5" @click.prevent="submit($refs.form)">
             <button type="button" class="inline-block px-8 py-3 bg-primary-500 rounded-md font-medium text-white transition-all hover:bg-primary-600">NEXT</button>
@@ -49,7 +51,7 @@
 import { useQuoteStore } from "@/stores/quote";
 import { mapActions, mapState } from "pinia";
 import Input from "@/components/ui/forms/Input.vue";
-import CardTitle from "@/components/ui/card/Title.vue";
+import Card from "@/components/ui/card/Card.vue";
 
 export default {
     computed: {
@@ -67,7 +69,7 @@ export default {
             this.changeScreen(3);
         },
     },
-    components: { Input, CardTitle }
+    components: { Input, Card }
 };
 </script>
 
