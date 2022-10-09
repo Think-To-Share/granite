@@ -9,7 +9,7 @@
             </div>
             <div class="flex items-center gap-x-4" v-if="has_upstand">
                 <div class="w-1/2">
-                    <input type="range" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-200" min="0" max="20" step="1" v-model="upstand_metres">
+                    <input type="range" class="w-full" min="0" max="20" step="1" v-model="upstand_metres">
                 </div>
                 <div class="w-1/2">
                     <div class="flex shadow-sm">

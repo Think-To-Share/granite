@@ -60,14 +60,14 @@
             <div class="px-6 py-4 border-t border-gray-200" v-if="project_layout">
                 <CardTitle>What are the Sizes for each piece in mm(millimetres)?</CardTitle>
 
-                <div class="flex gap-x-3 items-center mb-3">
+                <div class="flex gap-x-3 items-center mb-2">
                     <div class="w-1/12"></div>
-                    <div class="w-4/12 text-center font-bold text-primary-500 text-xl">
-                        <p>LENGTH</p>
+                    <div class="w-4/12 text-center font-bold text-slate-500 text-lg tracking-wide">
+                        <p>Length</p>
                     </div>
                     <div class="w-1/12"></div>
-                    <div class="w-4/12 text-center font-bold text-primary-500 text-xl">
-                        <p>WIDTH</p>
+                    <div class="w-4/12 text-center font-bold text-slate-500 text-lg tracking-wide">
+                        <p>Width</p>
                     </div>
                     <div class="w-2/12"></div>
                 </div>
