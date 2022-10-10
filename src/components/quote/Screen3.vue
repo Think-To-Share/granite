@@ -40,16 +40,18 @@ export default {
         ...mapActions(useQuoteProfileStore, ["submitData"]),
 
         nextButtonClick() {
-            this.submitData(this.quote_id).then(_ => {
-                console.log(this.errors)
-                if(this.error_messages.length) {
-                    window.scrollTo(0,0)
+            // this.submitData(this.quote_id).then(_ => {
+            //     console.log(this.errors)
+            //     if(this.error_messages.length) {
+            //         window.scrollTo(0,0)
                     
-                    return;
-                }
+            //         return;
+            //     }
 
-                this.changeScreen(4)
-            })
+            //     this.changeScreen(4)
+            // })
+
+            this.changeScreen(3);
         }
     },
 
