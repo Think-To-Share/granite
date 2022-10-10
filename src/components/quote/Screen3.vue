@@ -51,7 +51,7 @@ export default {
             //     this.changeScreen(4)
             // })
 
-            this.changeScreen(3);
+            this.changeScreen(4);
         }
     },
 
