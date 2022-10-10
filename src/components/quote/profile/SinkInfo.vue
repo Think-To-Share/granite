@@ -4,7 +4,11 @@
 
         <template v-slot:body>
             <div class="grid grid-cols-3 gap-8">
-                <SinkInfoBox image="/src/assets/images/unpolished-cut-outs.jpg" title="Unpolished Cut Outs" v-model="unpolished">
+                <SinkInfoBox title="Unpolished Cut Outs" v-model="unpolished">
+                    <template v-slot:image>
+                        <img class="w-full mb-5" src="@/assets/images/unpolished-cut-outs.jpg" alt="Unpolished Cut Outs">
+                    </template>
+
                     <template v-slot:options>
                         <option value="" selected disabled>Choose</option>
                         <option value="1">1</option>
@@ -15,7 +19,11 @@
                     </template>
                 </SinkInfoBox>
 
-                <SinkInfoBox image="/src/assets/images/polished-cut-outs.jpg" title="Polished Cut Outs" v-model="polished">
+                <SinkInfoBox title="Polished Cut Outs" v-model="polished">
+                    <template v-slot:image>
+                        <img class="w-full mb-5" src="@/assets/images/polished-cut-outs.jpg" alt="Polished Cut Outs">
+                    </template>
+
                     <template v-slot:options>
                         <option value="" selected disabled>Choose</option>
                         <option value="1">1</option>
@@ -26,7 +34,11 @@
                     </template>
                 </SinkInfoBox>
 
-                <SinkInfoBox image="/src/assets/images/drainer-grooves.jpg" title="Drainer Grooves" v-model="drainer">
+                <SinkInfoBox image="/src" title="Drainer Grooves" v-model="drainer">
+                    <template v-slot:image>
+                        <img class="w-full mb-5" src="@/assets/images/drainer-grooves.jpg" alt="Drainer Grooves">
+                    </template>
+
                     <template v-slot:options>
                         <option value="No" selected>No</option>
                         <option value="Yes">Yes</option>

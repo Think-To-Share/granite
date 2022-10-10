@@ -1,7 +1,7 @@
 <template>
     <div class="border p-5">
         <h4 class=" text-primary-500 text-center font-medium text-lg mb-5">{{ title }}</h4>
-        <img class="w-full mb-5" :src="imgSrc" :alt="title">
+        <slot name="image"></slot>
 
         <select class="border-gray-300 w-full rounded-lg shadow-sm transition-colors duration-100 ease-in" :value="modelValue" @change="$emit('update:modelValue', $event.target.value)">
             <slot name="options">
@@ -14,11 +14,6 @@
 <script>
 export default {
     props: ['image', 'title', 'modelValue'],
-    emits: ['update:modelValue'],
-    computed: {
-        imgSrc() {
-            return new URL(this.image, import.meta.url)
-        }
-    }
+    emits: ['update:modelValue']
 }
 </script>
