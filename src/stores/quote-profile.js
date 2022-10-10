@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios'
 
 export const useQuoteProfileStore = defineStore('quote_profile', {
     state() {
@@ -17,6 +18,13 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             drainer: 'No',
             upstand_metres: null,
             worktop_option: null,
+            errors: {},
+        }
+    },
+
+    getters: {
+        error_messages() {
+            return Object.values(this.errors).map(error => error[0])
         }
     },
 
@@ -98,6 +106,32 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
         setProjectPlanFile(file) {
             this.project_plan_file = file
+        },
+
+        async submitData(quote_id) {
+            this.errors = []
+            const formData = new FormData()
+
+            formData.append('project_layout', this.project_layout)
+            formData.append('project_dimensions', JSON.stringify(this.project_dimensions))
+            formData.append('project_plan_file', this.project_plan_file)
+            formData.append('project_plan_size', this.project_plan_size)
+            formData.append('unpolished', this.unpolished)
+            formData.append('polished', this.polished)
+            formData.append('drainer', this.drainer)
+            formData.append('upstand_metres', this.upstand_metres)
+            formData.append('worktop_option', this.worktop_option)
+
+            try {
+                await axios.post(`http://127.0.0.1:8000/request-quote-measurement/${quote_id}`, formData)
+            }catch(err) {
+                if(err.response.status === 422) {
+                    this.errors = err.response.data.errors;
+                    return;
+                }
+
+                throw err;
+            }
         }
     }
 })

@@ -27,14 +27,16 @@ import Card from '../ui/card/Card.vue'
 
 export default {
     methods: {
-        ...mapActions(useQuoteStore, ["changeScreen"]),
+        ...mapActions(useQuoteStore, ["changeScreen", "setQuoteId"]),
+
         selectProduct(product_id) {
-            this.axios.post("/request-quote-product", {
+            this.axios.post("http://127.0.0.1:8000/request-quote-product", {
                 "product_id": product_id
-            }).then(res => {
-                // Set Quote Id to State 
+            }).then(({data}) => {
+                this.setQuoteId(data.id)
+
+                this.changeScreen(2);
             });
-            this.changeScreen(2);
         }
     },
     components: { Card }

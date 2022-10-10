@@ -12,5 +12,9 @@ export const useQuoteStore = defineStore("quote", {
         changeScreen(screen) {
             this.currentScreen = screen;
         },
+
+        setQuoteId(value) {
+            this.quote_id = value
+        }
     },
 });
