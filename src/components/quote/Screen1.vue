@@ -10,7 +10,7 @@
                     <a class="relative hover:scale-110 transition-transform" href="#" @click.prevent="selectProduct(1)">
                         <img
                             class="w-full"
-                            src="@/assets/images/AlpineGrey1-206x206.jpg"
+                            src="/src/assets/images/AlpineGrey1-206x206.jpg"
                         />
                         <h3 class="absolute w-full bottom-0 left-0 px-2 py-4 bg-primary-400 text-center font-semibold text-md text-white">Viscon White</h3>
                     </a>  
