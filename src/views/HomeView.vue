@@ -14,19 +14,19 @@
             <div class="granite-menu">
                 <ul>
                     <li>
-                        <a href="#">About</a>
+                        <a href="https://demo.sjgraniteimports.com/about-us/">About</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="https://demo.sjgraniteimports.com/blog/">Blog</a>
                     </li>
                     <li>
-                        <a href="#">Gallery</a>
+                        <a href="https://demo.sjgraniteimports.com/gallery/">Gallery</a>
                     </li>
                     <li>
-                        <a href="#">FAQs</a>
+                        <a href="https://demo.sjgraniteimports.com/faq/">FAQs</a>
                     </li>
                     <li>
-                        <a href="#">Contact Us</a>
+                        <a href="https://demo.sjgraniteimports.com/contact-us/">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -34,22 +34,19 @@
         <div class="granite-header-bottom">
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="https://demo.sjgraniteimports.com/">Home</a>
                 </li>
                 <li>
-                    <a href="#">Granite</a>
+                    <a href="https://demo.sjgraniteimports.com/granite-worktops/">Granite</a>
                 </li>
                 <li>
-                    <a href="#">Quartz</a>
+                    <a href="https://demo.sjgraniteimports.com/quartz-worktops/">Quartz</a>
                 </li>
                 <li>
-                    <a href="#">Cobble</a>
+                    <a href="https://demo.sjgraniteimports.com/cobble/">Cobble</a>
                 </li>
                 <li>
-                    <a href="#">Kitchen Cabinet</a>
-                </li>
-                <li>
-                    <a href="#">Visualizer</a>
+                    <a href="https://storage.net-fs.com/hosting/7204451/66/">Visualizer</a>
                 </li>
                 <li>
                     <div class="header-btn">
@@ -60,11 +57,13 @@
         </div>
     </header>
 
-    <main class="p-5 w-2/3 mx-auto">
+    <main class="p-5 w-2/3 mx-auto mb-20">
         <Transition name="fade" mode="out-in">
             <component :is="`screen${currentScreen}`" />
         </Transition>
     </main>
+
+    <Footer />
 </template>
 
 <script>
@@ -74,6 +73,7 @@ import Screen1 from "@/components/quote/Screen1.vue";
 import Screen2 from "@/components/quote/Screen2.vue";
 import Screen3 from "@/components/quote/Screen3.vue";
 import Screen4 from "@/components/quote/Screen4.vue";
+import Footer from '@/components/Footer.vue';
 
 export default {
     components: {
@@ -81,6 +81,7 @@ export default {
         "screen2": Screen2,
         "screen3": Screen3,
         "screen4": Screen4,
+        Footer,
     },
 
     computed:{
