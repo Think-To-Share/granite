@@ -11,7 +11,7 @@
             <div class="px-6 py-4 border-t border-gray-200">
                 <CardTitle>What Layout is your kitchen?</CardTitle>
 
-                <div class="grid grid-cols-3 grid-rows-2 items-center gap-4">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-4">
                     <KitchenLayout
                         title="L Shape / Gallery"
                         :has_left="true"
@@ -48,7 +48,7 @@
                     />
                     <button
                         title="Custom Sizes"
-                        class="text-gray-500 font-medium min-h-full border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out hover:bg-primary-400 hover:text-white"
+                        class="text-gray-500 font-medium md:min-h-full min-h-[140px] border border-gray-200 p-3 rounded-md transition-colors duration-200 ease-in-out hover:bg-primary-400 hover:text-white"
                         :class="{ 'bg-primary-400 text-white': project_layout === 'custom', 'bg-white': project_layout !== 'custom' }"
                         @click="changeLayout('custom', 1)"
                     >
@@ -116,7 +116,7 @@
 
                 <div class="relative mt-2 inline-block">
                     <input type="file" class="hidden invisible" ref="project_plan_file" v-on:change="setProjectPlanFile($event.target.files[0])">
-                    <button @click="$refs.project_plan_file.click()" class="inline-block outline-none font-medium text-lg text-white bg-primary-500 px-6 py-4 rounded-md hover:bg-primary-600 focus:bg-primary-600 focus:ring-4 focus:ring-primary-500/25 transition-all duration-200 ease-in-out">Upload a Kitchen Plan</button>
+                    <button @click="$refs.project_plan_file.click()" class="inline-block outline-none font-medium md:text-lg text-base text-white bg-primary-500 md:px-6 md:py-4 px-5 py-3 rounded-md hover:bg-primary-600 focus:bg-primary-600 focus:ring-4 focus:ring-primary-500/25 transition-all duration-200 ease-in-out">Upload a Kitchen Plan</button>
 
                     <Transition>
                         <div class="pt-[7px]" v-if="project_plan_file">
@@ -135,13 +135,11 @@
 
             <CardTitle>How would you describe the Size of your Project?</CardTitle>
 
-            <div class="flex gap-x-4">
+            <div class="flex flex-wrap gap-4 md:justify-start justify-center">
                 <SquareButton :is_active="project_plan_size === 's'" @click="setProjectPlanSize('s')">S</SquareButton>
                 <SquareButton :is_active="project_plan_size === 'm'" @click="setProjectPlanSize('m')">M</SquareButton>
                 <SquareButton :is_active="project_plan_size === 'l'" @click="setProjectPlanSize('l')">L</SquareButton>
-                <SquareButton :is_active="project_plan_size === 'xl'" @click="setProjectPlanSize('xl')">
-                    XL
-                </SquareButton>
+                <SquareButton :is_active="project_plan_size === 'xl'" @click="setProjectPlanSize('xl')">XL</SquareButton>
             </div>
         </div>
     </div>

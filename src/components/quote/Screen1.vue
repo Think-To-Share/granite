@@ -6,7 +6,7 @@
                     <h2 class=" font-medium text-2xl text-gray-500 text-center">Quartz</h2>
                 </div>
 
-                <div class="grid grid-cols-8">
+                <div class="grid gap-x-2 grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))]">
                     <a class="relative hover:scale-110 transition-transform" href="#" @click.prevent="selectProduct(1)">
                         <img
                             class="w-full"

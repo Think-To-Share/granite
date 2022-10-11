@@ -7,11 +7,11 @@
                 <RoundButton :is_active="has_upstand" @click="setHasUpstand(true)">YES</RoundButton>
                 <RoundButton :is_active="has_upstand === false" @click="setHasUpstand(false)">NO</RoundButton>
             </div>
-            <div class="flex items-center gap-x-4" v-if="has_upstand">
-                <div class="w-1/2">
+            <div class="flex md:flex-nowrap flex-wrap items-center gap-4" v-if="has_upstand">
+                <div class="md:w-1/2 w-full">
                     <input type="range" class="w-full" min="0" max="20" step="1" v-model="upstand_metres">
                 </div>
-                <div class="w-1/2">
+                <div class="md:w-1/2 w-full">
                     <div class="flex shadow-sm">
                         <input type="text" id="website-admin" class="border-gray-300 rounded-none rounded-l-lg flex-1 min-w-0 w-full" placeholder="0" v-model="upstand_metres">
                         <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-r-md border border-l-0 border-gray-300">
@@ -30,7 +30,7 @@
             </div>
 
             <div class="mt-8" v-if="has_worktop">
-                <textarea class="w-8/12 border-gray-300 rounded-lg shadow-sm transition-colors duration-100 ease-in" rows="4" placeholder="Describe Here....." v-model="worktop_option"></textarea>
+                <textarea class="md:w-8/12 w-full border-gray-300 rounded-lg shadow-sm transition-colors duration-100 ease-in" rows="4" placeholder="Describe Here....." v-model="worktop_option"></textarea>
             </div>  
         </div>    
     </Card>

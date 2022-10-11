@@ -1,12 +1,12 @@
 <template>
     <footer class="bg-slate-200 py-10">
-        <div class="flex gap-x-10 container mx-auto">
-            <div class="w-4/12">
+        <div class="flex flex-wrap lg:flex-nowrap lg:gap-x-10 container mx-auto">
+            <div class="w-4/12 hidden lg:block">
             <h6 class=" text-2xl font-bold text-slate-600 mb-4">GET IN TOUCH WITH US</h6>
             <FooterContactForm />
             </div>
-            <div class="w-4/12 flex justify-center">
-                <div>
+            <div class="w-full md:w-1/2 lg:w-4/12 flex justify-center ">
+                <div class="text-center lg:text-left">
                     <h6 class=" text-2xl font-bold text-slate-600 mb-4">QUICK LINKS</h6>
                     <ul class="flex flex-col gap-y-2 text-xl">
                         <li>
@@ -29,9 +29,9 @@
                     <p class="text-xl text-gray-500">Mon - Sun: 9am - 9pm</p>
                 </div>
             </div>
-            <div class="w-4/12">
+            <div class="w-full md:w-1/2 lg:w-4/12 text-center lg:text-left mt-10 md:mt-0">
                 <h6 class=" text-2xl font-bold text-slate-600 mb-4">CONTACT &amp; SOCIAL</h6>
-                <div class=" flex flex-col gap-y-5">
+                <div class=" flex flex-col gap-y-5 items-center lg:items-start">
                     <a href="mailto:info@sjgraniteimports.com" class="text-gray-600 inline-flex gap-x-2 text-lg items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />

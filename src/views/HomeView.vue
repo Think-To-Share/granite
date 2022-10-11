@@ -57,7 +57,7 @@
         </div>
     </header>
 
-    <main class="p-5 w-2/3 mx-auto mb-20">
+    <main class="p-5 w-full lg:w-2/3 mx-auto mb-20">
         <Transition name="fade" mode="out-in">
             <component :is="`screen${currentScreen}`" />
         </Transition>

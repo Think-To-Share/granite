@@ -3,7 +3,7 @@
         <template v-slot:title>Please Choose</template>
 
         <template v-slot:body>
-            <div class="grid grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
                 <SinkInfoBox title="Unpolished Cut Outs" v-model="unpolished">
                     <template v-slot:image>
                         <img class="w-full mb-5" src="@/assets/images/unpolished-cut-outs.jpg" alt="Unpolished Cut Outs">

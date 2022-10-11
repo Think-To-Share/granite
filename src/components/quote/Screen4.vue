@@ -2,7 +2,7 @@
     <Card>
         <template v-slot:body>
             <form>
-                <div class="grid grid-cols-2 gap-y-3 gap-x-5">
+                <div class="grid md:grid-cols-2 grid-cols-1 gap-y-3 gap-x-5">
                     <div class="">
                         <label class="w-full block text-gray-600 font-medium">Your First Name <span class="text-red-500">*</span></label>
                         <Input name="f_name" class="w-full" />
@@ -23,7 +23,7 @@
                         <Input type="tel" name="" class="w-full" />
                     </div>
 
-                    <div class="col-span-2">
+                    <div class="md:col-span-2 col-span-1">
                         <label class="">
                             <input
                                 type="checkbox"
