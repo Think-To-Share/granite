@@ -163,7 +163,7 @@ export default {
 
     components: {
         dimensions: Dimensions,
-        RoundButton: RoundButton,
+        RoundButton,
         SquareButton,
         CardTitle,
         KitchenLayout,
@@ -185,7 +185,8 @@ export default {
                 return
             }
 
-            this.setProjectLayout(layout), this.setNDimensions(dimensions)
+            this.setProjectLayout(layout)
+            this.setNDimensions(dimensions)
         },
     },
 

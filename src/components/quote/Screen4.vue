@@ -32,8 +32,8 @@
 
                             <span class="text-sm text-gray-500 font-medium">
                                 I agree to the Terms &amp; Conditions,
-                                Privacy Policy &amp; to receive Granite
-                                Zone correspondence, quotes and offers
+                                Privacy Policy &amp; to receive SJ Granite
+                                correspondence, quotes and offers
                                 via email.</span
                             >
                         </label>
