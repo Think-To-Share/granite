@@ -1,60 +1,65 @@
 <template>
-<header class="granite-header">
-        <div class="granite-header-main">
-            <div class="action-menu">
-                <a href="tel:70923685927" class="action-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg><span>70923685927</span></a>
-                <a href="mailto:Info@sjgraniteimports.com" class="action-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/></svg><span>Info@sjgraniteimports.com</span></a>
-                <div class="get-quote-btn">
-                    <a href="#" class="quote-btn">Get Quote</a>
-                </div>
-            </div>
-            <div class="logo">
-               <a href="#"><img src="http://demo.sjgraniteimports.com/wp-content/uploads/2022/08/logo-1.png" alt="logo" class="logo-img"></a> 
-            </div>
-            <div class="granite-menu">
-                <ul>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/about-us/">About</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/gallery/">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/faq/">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/contact-us/">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="granite-header-bottom">
-            <ul>
-                <li>
-                    <a href="https://demo.sjgraniteimports.com/">Home</a>
-                </li>
-                <li>
-                    <a href="https://demo.sjgraniteimports.com/granite-worktops/">Granite</a>
-                </li>
-                <li>
-                    <a href="https://demo.sjgraniteimports.com/quartz-worktops/">Quartz</a>
-                </li>
-                <li>
-                    <a href="https://demo.sjgraniteimports.com/cobble/">Cobble</a>
-                </li>
-                <li>
-                    <a href="https://storage.net-fs.com/hosting/7204451/66/">Visualizer</a>
-                </li>
-                <li>
-                    <div class="header-btn">
-                        <a href="#" class="request-btn">Request A Free Quote</a>
+    <header class="granite-header">
+            <!-- <div class="granite-header-main"> -->
+                <!-- <div class="action-menu">
+                    <a href="tel:70923685927" class="action-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg><span>70923685927</span></a>
+                    <a href="mailto:Info@sjgraniteimports.com" class="action-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/></svg><span>Info@sjgraniteimports.com</span></a>
+                    <div class="get-quote-btn">
+                        <a href="#" class="quote-btn">Get Quote</a>
                     </div>
-                </li>
-            </ul>
-        </div>
+                </div> -->
+                
+                <!-- <div class="granite-menu">
+                    <ul>
+                        <li>
+                            <a href="https://demo.sjgraniteimports.com/about-us/">About</a>
+                        </li>
+                        <li>
+                            <a href="https://demo.sjgraniteimports.com/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://demo.sjgraniteimports.com/gallery/">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="https://demo.sjgraniteimports.com/faq/">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="https://demo.sjgraniteimports.com/contact-us/">Contact Us</a>
+                        </li>
+                    </ul>
+                </div> -->
+            <!-- </div> -->
+            <div class="header-main">
+                <div class="granite-header-logo">
+                    <div class="logo">
+                        <a href="#"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
+                    </div>
+                </div>
+                <div class="granite-header-list">
+                    <ul>
+                        <li>
+                            <a href="https://sjgraniteimports.com/granite-worktops/">Granite</a>
+                        </li>
+                        <li>
+                            <a href="https://sjgraniteimports.com/quartz-worktops/">Quartz</a>
+                        </li>
+                        <li>
+                            <a href="https://storage.net-fs.com/hosting/7204451/66/">Visualizer</a>
+                        </li>
+                        <li>
+                            <a href="https://sjgraniteimports.com/gallery/">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="https://sjgraniteimports.com/contact-us/">Contact</a>
+                        </li>
+                    </ul> 
+                </div>
+                <div class="granite-header-quote">
+                    <div class="header-btn">
+                        <a href="#" class="request-btn">Request A Free <br>Quote</a>
+                    </div>
+                </div>
+            </div> 
     </header>
 
     <header class="responsive-header">
@@ -64,10 +69,11 @@
                 </svg>
             </a>
             <div class="logo">
-                <a href="#"><img src="http://demo.sjgraniteimports.com/wp-content/uploads/2022/08/logo-1.png" alt="logo" class="logo-img"></a> 
+                <a href="#"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
             </div>
             <div class="get-quote-btn">
-                <a href="#" class="quote-btn">Get Quote</a>
+                <!-- <a href="#" class="quote-btn">Get Quote</a> -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
             </div>
         </div>
     </header>
@@ -78,28 +84,27 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-        </div>
 
-        <ul>
+            <ul>
             	<li>
                     <a href="https://demo.sjgraniteimports.com/">Home</a>
                 </li>
 			
-					<li>
-                        <a href="https://demo.sjgraniteimports.com/about-us/">About</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/gallery/">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/faq/">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="https://demo.sjgraniteimports.com/contact-us/">Contact Us</a>
-                    </li>
+                <li>
+                    <a href="https://demo.sjgraniteimports.com/about-us/">About</a>
+                </li>
+                <li>
+                    <a href="https://demo.sjgraniteimports.com/blog/">Blog</a>
+                </li>
+                <li>
+                    <a href="https://demo.sjgraniteimports.com/gallery/">Gallery</a>
+                </li>
+                <li>
+                    <a href="https://demo.sjgraniteimports.com/faq/">FAQs</a>
+                </li>
+                <li>
+                    <a href="https://demo.sjgraniteimports.com/contact-us/">Contact Us</a>
+                </li>
                 <li>
                     <a href="https://demo.sjgraniteimports.com/granite-worktops/">Granite</a>
                 </li>
@@ -113,11 +118,10 @@
                     <a href="https://storage.net-fs.com/hosting/7204451/66/">Visualizer</a>
                 </li>
                 <li>
-                    <div class="header-btn">
-                        <a href="#" class="request-btn">Request A Free Quote</a>
-                    </div>
+                    <a href="#" class="request-btn">Request A Free Quote</a>
                 </li>
-        </ul>
+            </ul>
+        </div>
     </div>
   
 </template>
