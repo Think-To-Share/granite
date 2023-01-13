@@ -52,12 +52,15 @@ $primary-font: 'Roboto', sans-serif;
                             text-decoration: none;
                             text-transform: capitalize;
                             transition: all 0.3s ease-in-out;
-                            font-size: 20px;
+                            font-size: 15px;
                             padding: 13px 4px;
                             &:hover{
                                 background-color: #3A687F;
                                 color: #fff;
                             }
+                            @media (min-width: 1200px) {
+                                font-size: 20px;
+                            } 
                         }
                     }
             }
@@ -67,9 +70,9 @@ $primary-font: 'Roboto', sans-serif;
                 background-color: #9C575E;
                 // border-radius: 10em;
                 font-family: $primary-font;
-                font-size: 1.1rem;
+                font-size: 0.8rem;
                 font-weight: 600;
-                padding: 0px 48px;
+                padding: 0px 30px;
                 height: 100%;
                 display: inline-flex;
                 align-items: center;
@@ -84,6 +87,11 @@ $primary-font: 'Roboto', sans-serif;
                 &:hover{
                     background-color: #B99340;
                 }
+
+                @media (min-width: 1200px) {
+                    font-size: 1.1rem;
+                    padding: 0px 48px;
+                } 
             }
         }
     } 
@@ -103,7 +111,8 @@ $primary-font: 'Roboto', sans-serif;
     top: 0;
     width: 100%;
     z-index: 9999;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-out;
     .mobile-header{
         display: flex;
         justify-content: space-around;
@@ -111,11 +120,13 @@ $primary-font: 'Roboto', sans-serif;
         width: 100%;
         .responsive-menu-btn {
             svg {
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
                 fill: #266D81;
+                color: #266D81;
             }
         }
+
         .logo{
             display: flex;
             width: 50%;
@@ -156,66 +167,48 @@ $primary-font: 'Roboto', sans-serif;
     {
         display: none;
     } 
-}
 
-.responsive-menu {
-    background-color: #E8E8E8;
-    height: auto;
-    width: 100vw;
-    overflow: auto;
-    padding: 30px 20px;
-    z-index: 100000;
-    transform: translateY(0);
-    transition: transform 0.2s ease-out;
-
-    &.hide {
-        transform: translatey(-100%);
-    }
-
-    .header {
-        display: flex;
-        padding: 5px 20px 5px 0;
-        justify-content: flex-end;
-
-        #close {
-            background: transparent;
-            border: none;
-            svg{
-                height: 30px;
-                width: 30px;
-                color: #266D81;
-            }
+    .responsive-header-menu {
+        // display: flex;
+        padding: 5px 20px 5px 5px;
+        justify-content: flex-start;
+        transform: scaleY(1);
+        transition: all 0.2s ease-out;
+        transform-origin: top;
+        height: auto;
+        &.hide {
+            transform: scaleY(0);
+            height: 0;
         }
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-            padding: 10px 0;
-
-            a {
-                text-decoration: none;
-                font-size: 1.3em;
-                color: #000;
-                font-family:$primary-font;
-            }
-            .header-btn{
-                .request-btn{
-                    background-color: #266d81;
-                    font-family: $primary-font;
-                    font-size: 1rem;
-                    font-weight: 400;
-                    padding: 10px 20px;
-                    transition: all 0.3s ease-in-out;
-                    white-space: nowrap;
-                    color: #fff;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                padding: 10px 0;
+    
+                a {
                     text-decoration: none;
-                    font-family: $primary-font;
+                    font-size: 1.3em;
+                    color: #000;
+                    font-family:$primary-font;
+                }
+                .header-btn{
+                    .request-btn{
+                        background-color: #266d81;
+                        font-family: $primary-font;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        padding: 10px 20px;
+                        transition: all 0.3s ease-in-out;
+                        white-space: nowrap;
+                        color: #fff;
+                        text-decoration: none;
+                        font-family: $primary-font;
+                    }
                 }
             }
         }
     }
 }
+
