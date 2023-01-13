@@ -37,7 +37,9 @@
         </div>
 
         <Transition name="fade" mode="out-in">
-            <component :is="`screen${currentScreen}`" />
+            <KeepAlive>
+                <component :is="`screen${currentScreen}`" />
+            </KeepAlive>
         </Transition>
     </main>
 
@@ -47,19 +49,16 @@
 <script>
 import { useQuoteStore } from '@/stores/quote'
 import { mapState } from "pinia"
-import Screen1 from "@/components/quote/Screen1.vue";
-import Screen2 from "@/components/quote/Screen2.vue";
-import Screen3 from "@/components/quote/Screen3.vue";
-import Screen4 from "@/components/quote/Screen4.vue";
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import { defineAsyncComponent } from '@vue/runtime-core';
 
 export default {
     components: {
-        "screen1": Screen1,
-        "screen2": Screen2,
-        "screen3": Screen3,
-        "screen4": Screen4,
+        "screen1": defineAsyncComponent(() => import('@/components/quote/Screen1.vue')),
+        "screen2": defineAsyncComponent(() => import('@/components/quote/Screen2.vue')),
+        "screen3": defineAsyncComponent(() => import('@/components/quote/Screen3.vue')),
+        "screen4": defineAsyncComponent(() => import('@/components/quote/Screen4.vue')),
         Footer,
         Header
     },
