@@ -1,7 +1,7 @@
 <template>
     <Card>
         <template v-slot:body>
-            <form @submit.prevent>
+            <form @submit.prevent="submit()" ref="form">
                 <div class="grid md:grid-cols-2 grid-cols-1 gap-y-3 gap-x-5">
                     <div class="">
                         <label class="w-full block text-gray-600 font-medium">Your First Name <span class="text-red-500">*</span></label>
@@ -53,9 +53,23 @@
 
 <script>
 import Card from '@/components/ui/card/Card.vue';
+import { useQuoteStore } from "@/stores/quote";
 import Input from '@/components/ui/forms/Input.vue';
+
 export default {
-    components: { Card, Input }
+    components: { Card, Input },
+    methods: {
+        submit() {
+            const formData = new FormData(this.$refs.form)
+
+            this.axios.post(`${process.env.API_URL}/request-quote-personal-details/${this.quote_id}`, formData).then(() => {
+                this.$router.push({name: 'home'})
+            })
+        }
+    },
+    computed: {
+        ...mapState(useQuoteStore, ["quote_id"]),
+    },
 }
 </script>
 

@@ -8,10 +8,7 @@
 
                 <div class="grid gap-x-2 grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))]">
                     <a v-for="product in products" :key="product.id" class="relative hover:scale-110 transition-transform" href="#" @click.prevent="selectProduct(product)">
-                        <img
-                            class="w-full"
-                            src="@/assets/images/AlpineGrey1-206x206.jpg"
-                        />
+                        <img class="w-full" :src="product.attributes.image" />
                         <h3 class="absolute w-full bottom-0 left-0 px-2 py-4 bg-primary-400 text-center font-semibold text-md text-white">{{ product.attributes.name }}</h3>
                     </a>  
                 </div>
@@ -33,7 +30,7 @@ export default {
     },
 
     mounted() {
-        this.axios.get('http://127.0.0.1:8000/products').then(({data}) => {
+        this.axios.get(`${process.env.API_URL}/products`).then(({data}) => {
             this.products = data.data
         })
     },
@@ -42,7 +39,7 @@ export default {
         ...mapActions(useQuoteStore, ["changeScreen", "setQuoteId", "setProduct"]),
 
         selectProduct(product) {
-            this.axios.post("http://127.0.0.1:8000/request-quote-product", {
+            this.axios.post(`${process.env.API_URL}/request-quote-product`, {
                 "product_id": product.id
             }).then(({data}) => {
                 this.setQuoteId(data.id)

@@ -73,7 +73,7 @@ export default {
 
         submit() {
             this.axios
-                .post(`http://127.0.0.1:8000/request-quote-address/${this.quote_id}`, this.form_data)
+                .post(`${process.env.API_URL}/request-quote-address/${this.quote_id}`, this.form_data)
                 .then((res) => {
                     this.changeScreen(3);
             });
