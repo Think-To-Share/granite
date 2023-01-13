@@ -73,7 +73,7 @@ export default {
 
         submit() {
             this.axios
-                .post(`${import.meta.env.API_URL}/request-quote-address/${this.quote_id}`, this.form_data)
+                .post(`${import.meta.env.VITE_API_URL}/request-quote-address/${this.quote_id}`, this.form_data)
                 .then((res) => {
                     this.changeScreen(3);
             });
