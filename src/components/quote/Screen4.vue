@@ -1,7 +1,7 @@
 <template>
     <Card>
         <template v-slot:body>
-            <form>
+            <form @submit.prevent>
                 <div class="grid md:grid-cols-2 grid-cols-1 gap-y-3 gap-x-5">
                     <div class="">
                         <label class="w-full block text-gray-600 font-medium">Your First Name <span class="text-red-500">*</span></label>

@@ -72,15 +72,11 @@ export default {
         ...mapActions(useQuoteStore, ["changeScreen"]),
 
         submit() {
-
-            // this.axios
-            //     .post(`http://127.0.0.1:8000/request-quote-address/${this.quote_id}`, this.form_data)
-            //     .then((res) => {
-            //         this.changeScreen(3);
-            // });
-
-            this.changeScreen(3);
-            
+            this.axios
+                .post(`http://127.0.0.1:8000/request-quote-address/${this.quote_id}`, this.form_data)
+                .then((res) => {
+                    this.changeScreen(3);
+            });
         },
     },
     components: { Input, Card }

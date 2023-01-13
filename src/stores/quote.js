@@ -5,6 +5,7 @@ export const useQuoteStore = defineStore("quote", {
         return {
             currentScreen: 1,
             quote_id: null,
+            product: null,
         };
     },
 
@@ -15,6 +16,10 @@ export const useQuoteStore = defineStore("quote", {
 
         setQuoteId(value) {
             this.quote_id = value
+        },
+
+        setProduct(value) {
+            this.product = value
         }
     },
 });

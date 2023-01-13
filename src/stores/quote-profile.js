@@ -112,6 +112,10 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             this.errors = []
             const formData = new FormData()
 
+            formData.append('has_project_size', this.has_project_size ? 1 : 0)
+            formData.append('has_upstand', this.has_upstand ? 1 : 0)
+            formData.append('has_worktop', this.has_worktop ? 1 : 0)
+            formData.append('has_project_plan', this.has_project_plan ? 1 : 0)
             formData.append('project_layout', this.project_layout)
             formData.append('project_dimensions', JSON.stringify(this.project_dimensions))
             formData.append('project_plan_file', this.project_plan_file)
