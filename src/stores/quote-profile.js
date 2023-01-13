@@ -127,7 +127,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             formData.append('worktop_option', this.worktop_option)
 
             try {
-                await axios.post(`${import.meta.env.API_URL}/request-quote-measurement/${quote_id}`, formData)
+                await axios.post(`${import.meta.env.VITE_API_URL}/request-quote-measurement/${quote_id}`, formData)
             }catch(err) {
                 if(err.response.status === 422) {
                     this.errors = err.response.data.errors;

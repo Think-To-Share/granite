@@ -30,7 +30,7 @@ export default {
     },
 
     mounted() {
-        this.axios.get(`${import.meta.env.API_URL}/products`).then(({data}) => {
+        this.axios.get(`${import.meta.env.VITE_API_URL}/products`).then(({data}) => {
             this.products = data.data
         })
     },
@@ -39,7 +39,7 @@ export default {
         ...mapActions(useQuoteStore, ["changeScreen", "setQuoteId", "setProduct"]),
 
         selectProduct(product) {
-            this.axios.post(`${process.env.API_URL}/request-quote-product`, {
+            this.axios.post(`${import.meta.env.VITE_API_URL}/request-quote-product`, {
                 "product_id": product.id
             }).then(({data}) => {
                 this.setQuoteId(data.id)
