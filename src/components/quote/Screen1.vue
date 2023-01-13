@@ -30,7 +30,7 @@ export default {
     },
 
     mounted() {
-        this.axios.get(`${process.env.API_URL}/products`).then(({data}) => {
+        this.axios.get(`${import.meta.env.API_URL}/products`).then(({data}) => {
             this.products = data.data
         })
     },
