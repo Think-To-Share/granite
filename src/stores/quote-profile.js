@@ -5,19 +5,19 @@ import axios from 'axios'
 export const useQuoteProfileStore = defineStore('quote_profile', {
     state() {
         return {
-            has_project_size: null,
-            has_upstand: null,
-            has_worktop: null,
-            has_project_plan: null,
-            project_layout: null,
+            has_project_size: '',
+            has_upstand: '',
+            has_worktop: '',
+            has_project_plan: '',
+            project_layout: '',
             project_dimensions: [],
-            project_plan_file: null,
-            project_plan_size: null,
+            project_plan_file: '',
+            project_plan_size: '',
             unpolished: '',
             polished: '',
             drainer: 'No',
-            upstand_metres: null,
-            worktop_option: null,
+            upstand_metres: '',
+            worktop_option: '',
             errors: {},
         }
     },
@@ -31,11 +31,11 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
     actions: {
         setHasProjectSize(value) {
             if(value === true) {
-                this.project_plan_file = null
-                this.project_plan_size = null
-                this.has_project_plan = null
+                this.project_plan_file = ''
+                this.project_plan_size = ''
+                this.has_project_plan = ''
             }else {
-                this.project_layout = null
+                this.project_layout = ''
                 this.project_dimensions = []
             }
 
@@ -46,7 +46,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             if(value === true) {
                 this.upstand_metres = 0
             }else {
-                this.upstand_metres = null
+                this.upstand_metres = ''
             }
 
             this.has_upstand = value
@@ -54,7 +54,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
         setHasProjectPlan(value) {
             if(value === false) {
-                this.project_plan_file = null
+                this.project_plan_file = ''
             }
 
             this.has_project_plan = value
@@ -62,7 +62,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
         setHasWorktop(value) {
             if(value === false) {
-                this.worktop_option = null
+                this.worktop_option = ''
             }
 
             this.has_worktop = value
