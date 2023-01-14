@@ -3,8 +3,8 @@
         <div class="px-6 py-4">
             <CardTitle>Do you know your Project Sizes?</CardTitle>
             <div class="flex gap-x-4">
-                <RoundButton :is_active="has_project_size" @click="setHasProjectSize(true)">YES</RoundButton>
-                <RoundButton :is_active="has_project_size === false" @click="setHasProjectSize(false)">NO</RoundButton>
+                <RoundButton :is_active="has_project_size" @click="setHasProjectSize(1)">YES</RoundButton>
+                <RoundButton :is_active="has_project_size === 0" @click="setHasProjectSize(0)">NO</RoundButton>
             </div>
         </div>
         <div v-if="has_project_size">
@@ -99,16 +99,16 @@
             </div>
         </div>
 
-        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_size === false">
+        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_size === 0">
             <CardTitle>Do you have a Project Plan?</CardTitle>
 
             <div class="flex gap-x-4">
-                <RoundButton :is_active="has_project_plan" @click="setHasProjectPlan(true)">YES</RoundButton>
-                <RoundButton :is_active="has_project_plan === false" @click="setHasProjectPlan(false)">NO</RoundButton>
+                <RoundButton :is_active="has_project_plan" @click="setHasProjectPlan(1)">YES</RoundButton>
+                <RoundButton :is_active="has_project_plan === 0" @click="setHasProjectPlan(0)">NO</RoundButton>
             </div>
         </div>
 
-        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_plan !== null">
+        <div class="px-6 py-4 border-t border-gray-200" v-if="has_project_plan !== ''">
             <div class="mb-6" v-if="has_project_plan">
                 <p class="text-sm text-slate-400">
                     Please attached your Kitchen Plan here and we will work out your sizes

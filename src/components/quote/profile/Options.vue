@@ -4,8 +4,8 @@
             <CardTitle>Do you require <strong>Upstands</strong> (in metres)?</CardTitle>
 
             <div class="flex gap-x-4">
-                <RoundButton :is_active="has_upstand" @click="setHasUpstand(true)">YES</RoundButton>
-                <RoundButton :is_active="has_upstand === false" @click="setHasUpstand(false)">NO</RoundButton>
+                <RoundButton :is_active="has_upstand" @click="setHasUpstand(1)">YES</RoundButton>
+                <RoundButton :is_active="has_upstand === 0" @click="setHasUpstand(0)">NO</RoundButton>
             </div>
             <div class="flex md:flex-nowrap flex-wrap items-center gap-4" v-if="has_upstand">
                 <div class="md:w-1/2 w-full">
@@ -25,8 +25,8 @@
         <div class="px-6 py-4 border-t border-gray-200">
             <CardTitle>Do you require any other <strong>Worktop Options</strong> not mentioned here?</CardTitle>
             <div class="flex gap-x-4">
-                <RoundButton :is_active="has_worktop" @click="setHasWorktop(true)">YES</RoundButton>
-                <RoundButton :is_active="has_worktop === false" @click="setHasWorktop(false)">NO</RoundButton>
+                <RoundButton :is_active="has_worktop" @click="setHasWorktop(1)">YES</RoundButton>
+                <RoundButton :is_active="has_worktop === 0" @click="setHasWorktop(0)">NO</RoundButton>
             </div>
 
             <div class="mt-8" v-if="has_worktop">

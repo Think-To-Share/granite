@@ -30,7 +30,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
 
     actions: {
         setHasProjectSize(value) {
-            if(value === true) {
+            if(value === 1) {
                 this.project_plan_file = ''
                 this.project_plan_size = ''
                 this.has_project_plan = ''
@@ -43,7 +43,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
         },
 
         setHasUpstand(value) {
-            if(value === true) {
+            if(value === 1) {
                 this.upstand_metres = 0
             }else {
                 this.upstand_metres = ''
@@ -53,7 +53,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
         },
 
         setHasProjectPlan(value) {
-            if(value === false) {
+            if(value === 0) {
                 this.project_plan_file = ''
             }
 
@@ -61,7 +61,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
         },
 
         setHasWorktop(value) {
-            if(value === false) {
+            if(value === 0) {
                 this.worktop_option = ''
             }
 
@@ -112,10 +112,10 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             this.errors = []
             const formData = new FormData()
 
-            formData.append('has_project_size', this.has_project_size ? 1 : 0)
-            formData.append('has_upstand', this.has_upstand ? 1 : 0)
-            formData.append('has_worktop', this.has_worktop ? 1 : 0)
-            formData.append('has_project_plan', this.has_project_plan ? 1 : 0)
+            formData.append('has_project_size', this.has_project_size)
+            formData.append('has_upstand', this.has_upstand)
+            formData.append('has_worktop', this.has_worktop)
+            formData.append('has_project_plan', this.has_project_plan)
             formData.append('project_layout', this.project_layout)
             formData.append('project_dimensions', JSON.stringify(this.project_dimensions))
             formData.append('project_plan_file', this.project_plan_file)
