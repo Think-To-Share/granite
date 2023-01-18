@@ -1,5 +1,5 @@
 <template>
-    <h4 class=" text-primary-500 md:text-xl text-lg font-medium mb-5">
+    <h4 class=" text-[#69b6d5] md:text-xl text-lg font-medium mb-5">
         <slot />
     </h4>
 </template>
