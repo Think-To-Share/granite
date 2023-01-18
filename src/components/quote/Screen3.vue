@@ -1,6 +1,6 @@
 <template>
     <section class="profile-part">
-        <Errors class="mb-8" :errors="error_messages" />
+        <Errors v-if="error_messages.length" class="mb-8" :errors="error_messages" />
 
         <selected-range class="mb-10" />
         <project-type class="mb-10" />
