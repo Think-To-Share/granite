@@ -5,6 +5,18 @@
         <Card>
             <template v-slot:title>Please Choose</template>
 
+            <template #info>
+                <Heading>Unpolished Cut Outs</Heading>
+                <Text>These cut outs apply to Hob and Standard Inset / Top-mounted sinks.</Text>
+                <Text>These cut outs are often called “unpolished” since the worktop edge of the cut out is not seen once the appliance has been fitted.</Text>
+
+                <Heading>Polished Cut Outs</Heading>
+                <Text>These are often referred to as Undermount cut outs. Cut out to the exacting shape of the sink, the worktop edges are visible and are therefore polished.</Text>
+
+                <Heading>Drainer Grooves</Heading>
+                <Text>Often accompanied with undermount sinks, these grooves are processed (carved) into the stone to allow water drainage as well as a wonderful finish not found on other standard worktops.</Text>
+            </template>
+
             <template v-slot:body>
                 <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
                     <SinkInfoBox title="Unpolished Cut Outs" v-model="unpolished">
@@ -62,9 +74,11 @@ import SinkInfoBox from './SinkInfoBox.vue';
 import { mapWritableState } from 'pinia';
 import { useQuoteProfileStore } from '@/stores/quote-profile';
 import SectionWithTitle from '@/components/ui/SectionWithTitle.vue';
+import Heading from '@/components/ui/card/info/Heading.vue'
+import Text from '@/components/ui/card/info/Text.vue'
 
 export default {
-    components: { Card, SinkInfoBox, SectionWithTitle },
+    components: { Card, SinkInfoBox, SectionWithTitle, Heading, Text },
     computed: {
         ...mapWritableState(useQuoteProfileStore, ['unpolished', 'polished', 'drainer'])
     }

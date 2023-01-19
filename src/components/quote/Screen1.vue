@@ -9,7 +9,7 @@
                 <div class="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))]">
                     <a v-for="product in products" :key="product.id" class="relative hover:scale-110 transition-transform" href="#" @click.prevent="selectProduct(product)">
                         <img class="w-full" :src="product.attributes.image" />
-                        <h3 class="absolute w-full bottom-0 left-0 px-2 py-4 bg-[#69b6d5] text-center font-semibold text-md text-white">{{ product.attributes.name }}</h3>
+                        <h3 class="absolute w-full bottom-0 left-0 px-2 bg-[#69b6d5] text-center font-semibold text-md text-white">{{ product.attributes.name }}</h3>
                     </a>  
                 </div>
             </template>

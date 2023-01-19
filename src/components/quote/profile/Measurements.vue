@@ -12,7 +12,15 @@
             </div>
             <div v-if="has_project_size">
                 <div class="px-6 py-4 border-t border-gray-200">
-                    <CardTitle>What Layout is your kitchen?</CardTitle>
+                    <CardTitle :show-info-btn="true">
+                        What Layout is your kitchen?
+
+                        <template #info>
+                            <Heading>Worktop Layout</Heading>
+                            <Text>Choose one of the layouts that matches your kitchen closest.</Text>
+                            <Text>If no layout works for your kitchen layout, choose the “Bespoke Shape” option.</Text>
+                        </template>
+                    </CardTitle>
 
                     <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-4">
                         <KitchenLayout
@@ -136,7 +144,30 @@
                     
                 </div>
 
-                <CardTitle>How would you describe the Size of your Project?</CardTitle>
+                <CardTitle :show-info-btn="true">
+                    How would you describe the Size of your Project?
+
+                    <template #info>
+                        <Heading>Approximate Kitchen Size</Heading>
+                        <Text>We will attempt to give you an estimate based on your approximate kitchen size.</Text>
+                        <Text>
+                            <b class="text-primary-500">S = Small.</b><br>
+                            Kitchens of about 3 sqm in total.
+                        </Text>
+                        <Text>
+                            <b class="text-primary-500">M = Medium.</b><br>
+                            Kitchens of about 4.5 sqm in total.
+                        </Text>
+                        <Text>
+                            <b class="text-primary-500">L = Large.</b><br>
+                            Kitchens of about 5.5 sqm in total.
+                        </Text>
+                        <Text>
+                            <b class="text-primary-500">XL = Extra Large.</b><br>
+                            Kitchens of about 7 sqm in total.
+                        </Text>
+                    </template>
+                </CardTitle>
 
                 <div class="flex flex-wrap gap-4 md:justify-start justify-center">
                     <SquareButton :is_active="project_plan_size === 's'" @click="setProjectPlanSize('s')">S</SquareButton>
@@ -156,6 +187,8 @@ import { mapActions, mapState, mapWritableState } from 'pinia'
 import { useQuoteProfileStore } from '@/stores/quote-profile'
 import SquareButton from '@/components/ui/SquareButton.vue'
 import CardTitle from '@/components/ui/card/Title.vue'
+import Heading from '@/components/ui/card/info/Heading.vue'
+import Text from '@/components/ui/card/info/Text.vue'
 import KitchenLayout from '@/components/quote/profile/KitchenLayout.vue'
 import SectionWithTitle from '@/components/ui/SectionWithTitle.vue';
 
@@ -173,6 +206,8 @@ export default {
         CardTitle,
         KitchenLayout,
         SectionWithTitle,
+        Heading,
+        Text,
     },
 
     methods: {

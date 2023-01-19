@@ -4,7 +4,18 @@
 
         <Card>
             <div class="px-6 py-4">
-                <CardTitle>Do you require <strong>Upstands</strong> (in metres)?</CardTitle>
+                <CardTitle :show-info-btn="true">
+                    Do you require <strong>Upstands</strong> (in metres)?
+
+                    <template #info>
+                        <Heading>Upstands</Heading>
+
+                        <img src="@/assets/images/upstands.jpg" alt="upstands" class=" w-full md:w-auto max-w-full">
+
+                        <Text>This forms a border between the worktops and the walls, to offer a super visual finish as well as protection from spillages.</Text>
+                        <Text>Standard heights are 10cm (4 inches).</Text>
+                    </template>
+                </CardTitle>
 
                 <div class="flex gap-x-4">
                     <RoundButton :is_active="has_upstand" @click="setHasUpstand(1)">YES</RoundButton>
@@ -49,10 +60,12 @@ import CardTitle from '@/components/ui/card/Title.vue';
 import { mapActions, mapState, mapWritableState } from 'pinia';
 import { useQuoteProfileStore } from '@/stores/quote-profile';
 import SectionWithTitle from '@/components/ui/SectionWithTitle.vue';
+import Text from '@/components/ui/card/info/Text.vue'
+import Heading from '@/components/ui/card/info/Heading.vue'
 
 
 export default {
-    components: { RoundButton, Card, CardTitle, SectionWithTitle },
+    components: { RoundButton, Card, CardTitle, SectionWithTitle, Text, Heading },
 
     data() {
         return {
