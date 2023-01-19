@@ -1,36 +1,36 @@
 <template>
-    <footer class="bg-slate-200 py-10">
+    <footer class="bg-[#D9D9D9] py-6">
         <div class="flex flex-wrap lg:flex-nowrap lg:gap-x-10 container mx-auto">
             <div class="w-4/12 hidden lg:block">
-            <h6 class=" text-2xl font-bold text-slate-600 mb-4">GET IN TOUCH WITH US</h6>
+            <h6 class=" text-2xl md:text-xl text-black mb-4">GET IN TOUCH WITH US</h6>
             <FooterContactForm />
             </div>
             <div class="w-full md:w-1/2 lg:w-4/12 flex justify-center ">
                 <div class="text-center lg:text-left">
-                    <h6 class=" text-2xl font-bold text-slate-600 mb-4">QUICK LINKS</h6>
-                    <ul class="flex flex-col gap-y-2 text-xl">
+                    <h6 class=" text-2xl md:text-xl text-black mb-4">QUICK LINKS</h6>
+                    <ul class="flex flex-col gap-y-2 text-lg">
                         <li>
-                            <a href="https://demo.sjgraniteimports.com/about-us/" class=" text-gray-500">About Us</a>
+                            <a href="https://demo.sjgraniteimports.com/about-us/" class=" text-black">About Us</a>
                         </li>
                         <li>
-                            <a href="https://demo.sjgraniteimports.com/contact-us/" class=" text-gray-500">Contact Us</a>
+                            <a href="https://demo.sjgraniteimports.com/contact-us/" class=" text-black">Contact Us</a>
                         </li>
                         <li>
-                            <a href="https://demo.sjgraniteimports.com/faq/" class=" text-gray-500">FAQs</a>
+                            <a href="https://demo.sjgraniteimports.com/faq/" class=" text-black">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class=" text-gray-500">Terms &amp; Conditions</a>
+                            <a href="#" class=" text-black">Terms &amp; Conditions</a>
                         </li>
                         <li>
-                            <a href="#" class=" text-gray-500">Privacy Policy</a>
+                            <a href="#" class=" text-black">Privacy Policy</a>
                         </li>
                     </ul>
-                    <h6 class=" text-2xl font-bold text-slate-600 mt-8 mb-3 uppercase">Opening Hours</h6>
-                    <p class="text-xl text-gray-500">Mon - Sun: 9am - 9pm</p>
+                    <h6 class=" text-2xl md:text-xl text-black mt-8 mb-3 uppercase">Opening Hours</h6>
+                    <p class="text-lg text-gray-500">Mon - Sun: 9am - 9pm</p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 lg:w-4/12 text-center lg:text-left mt-10 md:mt-0">
-                <h6 class=" text-2xl font-bold text-slate-600 mb-4">CONTACT &amp; SOCIAL</h6>
+                <h6 class=" text-2xl md:text-xl text-black mb-4">CONTACT &amp; SOCIAL</h6>
                 <div class=" flex flex-col gap-y-5 items-center lg:items-start">
                     <a href="mailto:info@sjgraniteimports.com" class="text-gray-600 inline-flex gap-x-2 text-lg items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -40,7 +40,7 @@
                         <span class=" text-gray-500">info@sjgraniteimports.com</span>
                     </a>
 
-                    <a href="tel:07923685927" class="text-gray-600 inline-flex gap-x-2 text-lg items-center">
+                    <a href="tel:07923685927" class="text-gray-600 inline-flex gap-x-2 text-md items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
                         </svg>
