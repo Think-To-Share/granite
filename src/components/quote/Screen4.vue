@@ -63,7 +63,7 @@ export default {
             const formData = new FormData(this.$refs.form)
 
             this.axios.post(`${import.meta.env.VITE_API_URL}/request-quote-personal-details/${this.quote_id}`, formData).then(() => {
-                this.$router.push({name: 'home'})
+                window.location = "https://sjgraniteimports.com/thank-you/"
             })
         }
     },
