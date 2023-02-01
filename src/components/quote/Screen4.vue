@@ -55,6 +55,7 @@
 import Card from '@/components/ui/card/Card.vue';
 import { useQuoteStore } from "@/stores/quote";
 import Input from '@/components/ui/forms/Input.vue';
+import { mapState } from 'pinia';
 
 export default {
     components: { Card, Input },
