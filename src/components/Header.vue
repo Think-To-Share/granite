@@ -3,7 +3,7 @@
             <div class="header-main">
                 <div class="granite-header-logo">
                     <div class="logo">
-                        <a href="#"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
+                        <a href="https://sjgraniteimports.com/"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
                     </div>
                 </div>
                 <div class="granite-header-list">
