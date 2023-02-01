@@ -47,7 +47,7 @@
 
                         <span class=" text-gray-500">07923685927</span>
                     </a>
-                    <a href="#">
+                    <a href="PayPal.Me/SJGRANITE">
                         <img src="@/assets/images/logo_paypal.png" class=" w-28">
                     </a>
                     <ul class="flex gap-x-3">
@@ -69,10 +69,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 import FooterContactForm from './FooterContactForm.vue'
 export default {
   components: { FooterContactForm },
-    
 }
 </script>
 
