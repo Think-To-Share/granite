@@ -41,7 +41,7 @@
                 <svg v-if="showMobileMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </a>
             <div class="logo">
-                <a href="#"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
+                <a href="https://sjgraniteimports.com/"><img src="https://sjgraniteimports.com/wp-content/uploads/2022/11/image-removebg-preview-10-1-1-3.jpg" alt="logo" class="logo-img"></a> 
             </div>
             <div class="get-quote-btn">
                 <!-- <a href="#" class="quote-btn">Get Quote</a> -->
