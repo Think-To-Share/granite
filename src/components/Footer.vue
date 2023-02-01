@@ -19,10 +19,10 @@
                             <a href="https://demo.sjgraniteimports.com/faq/" class=" text-black">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class=" text-black">Terms &amp; Conditions</a>
+                            <a href="https://sjgraniteimports.com/terms-and-conditions/" class=" text-black">Terms &amp; Conditions</a>
                         </li>
                         <li>
-                            <a href="#" class=" text-black">Privacy Policy</a>
+                            <a href="https://sjgraniteimports.com/privacy-policy/" class=" text-black">Privacy Policy</a>
                         </li>
                     </ul>
                     <h6 class=" text-2xl md:text-xl text-black mt-8 mb-3 uppercase">Opening Hours</h6>
