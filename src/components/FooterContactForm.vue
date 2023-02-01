@@ -23,12 +23,7 @@
 
             <div class="mb-3">
                 <label class="w-full block text-gray-600 font-medium">Attachment</label>
-                <input type="file" name="file" class="block mt-2 w-full text-sm text-slate-500
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-full file:border-0
-                file:text-sm file:font-semibold
-                file:bg-blue-50 file:text-blue-700 file:cursor-pointer
-                hover:file:bg-blue-100" />
+                <input type="file" name="file" class="block mt-2 w-full text-sm text-slate-500 border border-gray-600 p-2 bg-white" />
             </div>
             
             <button
