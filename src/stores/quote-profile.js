@@ -7,6 +7,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
         return {
             has_project_size: '',
             has_upstand: '',
+            has_splashback: '',
             has_worktop: '',
             has_project_plan: '',
             project_layout: '',
@@ -52,6 +53,10 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             this.has_upstand = value
         },
 
+        setHasSplashback(value) {
+            this.has_splashback = value
+        },
+
         setHasProjectPlan(value) {
             if(value === 0) {
                 this.project_plan_file = ''
@@ -64,7 +69,6 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             if(value === 0) {
                 this.worktop_option = ''
             }
-
             this.has_worktop = value
         },
 
@@ -123,6 +127,7 @@ export const useQuoteProfileStore = defineStore('quote_profile', {
             formData.append('unpolished', this.unpolished)
             formData.append('polished', this.polished)
             formData.append('drainer', this.drainer)
+            formData.append('has_splashback', this.has_splashback)
             formData.append('upstand_metres', this.upstand_metres)
             formData.append('worktop_option', this.worktop_option)
 

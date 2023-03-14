@@ -5,6 +5,25 @@
         <Card>
             <div class="px-6 py-4">
                 <CardTitle :show-info-btn="true">
+                    Do you require <strong>Splashback</strong> (in metres)?
+
+                    <template #info>
+                        <Heading>Splashbacks</Heading>
+
+                        <!-- <img src="@/assets/images/upstands.jpg" alt="Splashbacks" class=" w-full md:w-auto max-w-full"> -->
+
+                        <Text>Splashbacks are normally used behind the hob to protect your walls from spills and splashes.</Text>
+                    </template>
+                </CardTitle>
+
+                <div class="flex gap-x-4">
+                    <RoundButton :is_active="has_splashback" @click="setHasSplashback(1)">YES</RoundButton>
+                    <RoundButton :is_active="has_splashback === 0" @click="setHasSplashback(0)">NO</RoundButton>
+                </div>
+            </div>
+            
+            <div class="px-6 py-4 border-t border-gray-200">
+                <CardTitle :show-info-btn="true">
                     Do you require <strong>Upstands</strong> (in metres)?
 
                     <template #info>
@@ -76,11 +95,11 @@ export default {
     },
 
     methods: {
-        ...mapActions(useQuoteProfileStore, ['setHasUpstand', 'setHasWorktop'])
+        ...mapActions(useQuoteProfileStore, ['setHasUpstand', 'setHasWorktop', 'setHasSplashback'])
     },
 
     computed: {
-        ...mapState(useQuoteProfileStore, ['has_upstand', 'has_worktop']),
+        ...mapState(useQuoteProfileStore, ['has_upstand', 'has_worktop', 'has_splashback']),
         ...mapWritableState(useQuoteProfileStore, ['upstand_metres', 'worktop_option'])
     }
 }

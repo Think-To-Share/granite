@@ -27,7 +27,7 @@
                 </div>
                 <div class="granite-header-quote">
                     <div class="header-btn">
-                        <a href="#" class="request-btn">Request A Free <br>Quote</a>
+                        <a href="https://requestforquote.sjgraniteimports.com/" class="request-btn">Request A Free <br>Quote</a>
                     </div>
                 </div>
             </div> 
@@ -72,7 +72,7 @@
                     <a href="https://sjgraniteimports.com/gallery/">Gallery</a>
                 </li>
                 <li>
-                    <a href="#" class="request-btn">Request A Free Quote</a>
+                    <a href="https://requestforquote.sjgraniteimports.com/" class="request-btn">Request A Free Quote</a>
                 </li>
                 <li>
                     <a href="https://sjgraniteimports.com/contact-us/">Contact Us</a>
